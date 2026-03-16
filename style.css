@@ -263,7 +263,8 @@ a {
 }
 /*-------------------------CTA SECTION---------------------------------*/
 .cta-section {
-    min-height: 70vh;
+    height: 70vh;
+    min-height: min-content;
     width: 100%; 
     background: url(assets/Girl\ with\ flower\ in\ mouth.jpg);
     background-position: center;
@@ -318,7 +319,7 @@ a {
     height: 90%;
     background-color: var(--text-color);
     color: black;
-    position: relative;
+
 
 }
 .pricing-card-title {
