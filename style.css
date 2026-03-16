@@ -1,0 +1,633 @@
+
+:root {
+
+  /* ── COLORS ─────────────────────────────── */
+
+  /* Neutrals */
+  --light-color:       #eee2d1;
+  --dark-color:        #170d0d;
+  --accent-color:      #4f2c18;
+  --text-color:        rgb(232, 228, 215);
+  --muted-color:       rgb(53, 38, 31);
+
+  /* ── TYPOGRAPHY ─────────────────────────── */
+
+  --font-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:   'Times New Roman', serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  --font-sm-text:   0.8rem; 
+  --font-med-text:   1.55rem;    /* 12px */
+  --font-subtitle: clamp(1.5rem, 2.5vw, 2rem);
+  --font-title:   clamp(3rem, 4.5vw, 6.5rem);
+
+  --font-weight-light:    300;
+
+  --line-height-tight:   1.2;
+  --letter-spacing-widest:  0.15em;
+  --letter-spacing-med: 1px;
+
+  --medium-spacing: 2rem;
+  --text-width: 80%;
+  --title-width: 90%;
+}
+@font-face {
+  font-family: 'Switzer-Black';
+  src: url('/assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff') format('woff'),
+       url('assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff') format('woff'),
+       url('assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regulat.ttf') format('truetype');
+}
+
+
+/*
+  EFFECTS TO ADD: 
+  1. DARK GRADIENT THAT SLIDES UP REVEALING PHOTOS
+  2. FIX STICKY NAV 
+  3. FADE IN TEXT EFFECTS 
+  4. GLOW ON HOVER FOR BUTTON EFFECT 
+  */
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    border: solid 1px lightblue;
+}
+body {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-family: 'Switzer-Black', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+nav, footer, h1 {
+  font-family:'Times New Roman', Times, serif;
+}
+ nav {
+   height: 100px;
+   display: flex;
+   align-items: center;
+   background-color: var(--dark-color);
+   justify-content: flex-end;
+   background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+   backdrop-filter: blur(10px); /* Creates the blur effect */
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+   position: sticky;
+   top: 0; /* Remember to always add this for sticky navs */
+   z-index: 1000;
+   margin-bottom: -104px; 
+   font-weight: 300;
+   padding: 0 30px;
+     }
+ 
+ .links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+ }
+
+ nav a {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--light-color);
+ }
+
+ nav a:hover{
+    color: var(--accent-color);
+ }
+
+ nav .home-link {
+    margin-right: auto;
+ }
+
+ nav svg{
+    fill: var(--accent-color);
+ }
+.logo {
+    color: var(--light-color);
+    font-size: 40px;
+    font-weight: 300;
+    padding: 20px;
+ }
+ .logo-mobile {
+    display: none;
+}
+
+
+/*SIDEBAR-ACTIVE is the label for the checkbox, display:none removes the checkbox from being shown*/
+ #sidebar-active {
+    display: none; 
+ }
+/*HIDES BURGER AND CLOSE ICON FROM SHOWING*/ 
+ .open-sidebar-button, .close-sidebar-button {
+    display: none;
+ }
+
+ @media(max-width: 580px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right:-100%; /*Instead of display:none; we position it 100% to the right so we can use an animation property. This MUST be paired with the checked ~ so the menu will return to right: 0 when checked*/ 
+        z-index: 10;
+        width: 150px;
+        background-color: var(--accent-color);
+        transition: 0.75s ease-out;
+        height: 100vh;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        color: var(--dark-color);
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        display: block;
+        padding: 20px;
+    }
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+    }
+    .exit-svg {
+        fill: var(--accent-color);
+ }
+ .logo {
+   display: none;
+ }
+   .burger-svg {
+      fill: var(--dark-color);
+   }
+
+ #sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9;
+ }
+ .logo-mobile {
+   display: block;
+   z-index:1001;
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+    position: absolute;
+    left: 20%;
+    top: 4%;
+    transform: translateX(-50%);
+}
+}
+
+/*-------------------------HERO SECTION---------------------------------*/
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    background-image: url("assets/photos/Exotic\ dancer\ lying\ on\ back.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--muted-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 5%;
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.location-text {
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  font-size: var(--font-subtitle);
+}
+ #hero-headline {
+    font-size: var(--font-title);
+     font-weight: 400;
+    }
+
+#hero-subheadline {
+    font-size: var(--font-subtitle);
+    font-weight: 200;
+}
+.subtitle {
+  font-size: var(--font-subtitle);
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px
+}
+button {
+    width: 200px;
+    height: 60px;
+    background-color: var(--muted-color);
+    color: var(--light-color);
+    font-size: 20px;
+    letter-spacing: var(--letter-spacing-widest);
+    border: solid 1px var(--light-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color)
+}
+@media screen and (max-width: 480px) {
+    .hero-text {
+      gap: 50px;
+    }
+}
+/*-------------------------CTA SECTION---------------------------------*/
+.cta-section {
+    min-height: 70vh;
+    width: 100%; 
+    background: url(assets/Girl\ with\ flower\ in\ mouth.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cta-text-box {
+    padding: var(--medium-spacing);
+    width: var(--text-width);
+    text-align: center;
+}
+.cta-text {
+    color: hsla(rgb(198, 189, 189) 50%);
+    padding: 2rem;
+}
+
+/*-------------------------CTA SECTION---------------------------------*/
+.pricing {
+    width: 100%;
+    height: 70vh;
+    min-height: min-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.pricing-title {
+    font-size: var(--font-subtitle);
+}
+.pricing-subtitle {
+     padding-bottom: 3rem;
+     color: var(--accent-color);
+}
+.pricing-description {
+    font-size: 25px;
+}
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.pricing-card {
+    width: 350px;
+    height: 90%;
+    background-color: var(--text-color);
+    color: black;
+    position: relative;
+
+}
+.pricing-card-title {
+    letter-spacing: var(--letter-spacing-med);
+    text-transform: uppercase;
+}
+.main-card {
+    padding: 3rem 0;
+    background-color: var(--main-color);
+    color: var(--light-color);
+    height: 100%;
+}
+
+.pricing-card {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.pricing-list {
+    font-size: 1.2rem;
+    text-align: left;
+}
+.pricing-button {
+    width: 200px;
+    height: 50px;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1270px) {
+    .pricing-card-title {
+        font-size: 25px;
+    }
+    .pricing-card-description {
+        font-size: 20px;
+    }
+    .pricing-list {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 980px) {
+    .pricing-cards{
+     flex-direction: column;
+}
+.pricing-subtitle {
+     padding-bottom: 0;
+}
+.pricing-cards {
+    margin: 1rem;
+}
+.pricing-card {
+    width: 80%;
+    padding: 2rem;
+    flex-direction: row;
+    gap: 3rem;
+}
+.pricing-button {
+    font-size: 1rem;
+}
+}
+@media screen and (max-width: 780px) {
+    .pricing-card {
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    .pricing-card {
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width: 480px) {
+.pricing {
+    padding: 1rem;
+}
+.pricing-cards {
+    margin: 1rem;
+}
+}
+/*-------------------------------PROCESS--------------------------------*/
+.process {
+    margin: 0 auto; 
+    width: 80%;
+    background: var(--main-color);
+    color: white;
+    display: flex;
+    gap: 4rem;
+    padding: 3rem;
+    padding-bottom: 4rem;
+}
+.process-card {
+    width: 100%; 
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.process-title {
+    font-size: 1.8rem;
+}
+.process-subtitle {
+    font-weight: 200;
+    text-align: center;
+    color: var(--light-color);
+}
+.process-description {
+    max-width: 80%;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--light-color);
+}
+
+.icon-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+.bouncy-icon:hover {
+    animation: bounce 1s linear ; 
+}
+@media screen and (max-width: 890px) { 
+.features {
+    min-height: 90vh; 
+    flex-direction: column;
+}
+.process-description {
+    max-width: 70%;
+}
+}
+
+
+@media screen and (max-width: 1450px) /* Applies to screens smaller than 1450px */ {
+.icon-arrow {
+    display: none; /* Hides the icon-arrow element on smaller screens */
+}
+}
+@media screen and (max-width: 890px) {
+    .process-card {
+        min-height: 25vh;
+    }}
+
+@media screen and (max-width: 780px) { 
+.process {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+}
+.feature-description {
+    max-width: 70%;
+}
+}
+
+footer {
+min-width: 100%;
+padding: 5rem;
+background-color: var(--off-white-color);
+color: black;
+}
+
+.footer-items {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+
+.footer-foot {
+    padding-top: 2rem;
+    text-align: center;
+    border-top: solid 1px var(--main-black);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 300;
+}
+.faq-section {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding: 10vh 0 0;
+}
+.faq-title h2 {
+  position: relative;
+  margin-bottom: 45px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+}
+.faq-title h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: #E91E63;
+    bottom: -25px;
+    margin-left: -30px;
+}
+.faq-title p {
+  padding: 0 190px;
+  margin-bottom: 10px;
+}
+.grid-test {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+}
+
+.faq {
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.faq .card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+  padding: 0px;
+  border: none;
+  background: none;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.faq .card .card-header:hover {
+    background: rgba(233, 30, 99, 0.1);
+    padding-left: 10px;
+}
+.faq .card .card-header .faq-title {
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #3B566E;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .card .card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 14px;
+  float: left;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  background: #E91E63;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.faq .card .card-body {
+  padding: 30px;
+  padding-left: 35px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6F8BA4;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border-top: 1px solid #F3F8FF;
+}
+
+.faq .card .card-body p {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 991px) {
+  .faq {
+    margin-bottom: 30px;
+  }
+  .faq .card .card-header .faq-title {
+    line-height: 26px;
+    margin-top: 10px;
+  }
+}
