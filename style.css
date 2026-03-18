@@ -17,7 +17,7 @@
   --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   --font-sm-text:   0.8rem; 
-  --font-med-text:   1.55rem;  
+  --font-med-text:   1.3rem;  
   --font-subtitle: clamp(1.5rem, 2.5vw, 2rem);
   --font-title:   clamp(3rem, 4.5vw, 6.5rem);
 
@@ -31,10 +31,13 @@
   --text-width: 80%;
   --title-width: 90%;
 
---container-lg: 1200px;
+  --container-lg: 1200px;
   --container-md: 900px;
   --container-sm: 600px;
 
+  --title-margin-bottom: 3rem;
+  --title-padding: 2rem;
+    
 }
 @font-face {
   font-family: 'Switzer-Black';
@@ -59,17 +62,22 @@
   margin: 0;
   padding: 0;
 }
+html {
+    font-size: 15px;
+}
 body {
     background-color: var(--dark-color);
     color: var(--light-color);
     font-family: 'Switzer-Black', sans-serif;
-    font-size: 16px;
     line-height: 1.5;
 }
 .container {
   width: 90%;
   max-width: var(--container-lg);
   margin-inline: auto;
+}
+.tit-pad {
+    padding: var(--title-padding);
 }
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
@@ -204,13 +212,6 @@ header {
 
 /*-------------------------HERO SECTION---------------------------------*/
 
-.hero {
-    min-height: 100vh;
-    background-image: url("assets/photos/exotic-dancer.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 .section    {
     min-height: min-content;
     display: flex;
@@ -224,7 +225,15 @@ header {
     max-width: var(--container-lg);
     margin-inline: auto;
 }
-hero-cont {
+.hero {
+    min-height: 80vh;
+    background-image: url("assets/photos/exotic-dancer.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-cont {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,14 +251,16 @@ hero-cont {
   text-transform: uppercase;
   font-size: var(--font-subtitle);
 }
- #hero-headline {
+ .hero-headline {
     font-size: var(--font-title);
      font-weight: 400;
+     padding: var(--title-padding);
     }
 
-#hero-subheadline {
+.hero-subheadline {
     font-size: var(--font-subtitle);
     font-weight: 200;
+    margin-bottom: var(--title-margin-bottom);
 }
 .subtitle {
   font-size: var(--font-subtitle);
@@ -257,14 +268,14 @@ hero-cont {
 .hero-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 100px
+    /*margin-top: 100px*/
 }
 button {
     width: 200px;
     height: 60px;
     background-color: var(--muted-color);
     color: var(--light-color);
-    font-size: 20px;
+    font-size: var(--font-med-text);
     letter-spacing: var(--letter-spacing-widest);
     border: solid 1px var(--light-color);
 }
@@ -273,11 +284,7 @@ a {
     text-decoration: none;
     color: var(--light-color)
 }
-@media screen and (max-width: 480px) {
-    .hero-text {
-      gap: 50px;
-    }
-}
+
 /*-------------------------CTA SECTION---------------------------------*/
 
 .cta-text-box {
@@ -287,22 +294,15 @@ a {
 }
 .cta-text {
     color: hsla(rgb(198, 189, 189) 50%);
-    padding: 2rem;
 }
 
-/*-------------------------CTA SECTION---------------------------------*/
-/*.pricing {
-    height: 70vh;
-    padding: 5rem 2rem;
-    gap: 1rem;
-}*/
+/*-------------------------PRICING SECTION---------------------------------*/
 
 .pricing-title {
     font-size: var(--font-subtitle);
 }
 .pricing-subtitle {
-     padding-bottom: 3rem;
-     color: var(--accent-color);
+     font-size: var(--font-sm-text);
 }
 .pricing-description {
     font-size: 25px;
@@ -350,17 +350,6 @@ a {
     font-size: 1.3rem;
 }
 
-@media screen and (max-width: 1270px) {
-    .pricing-card-title {
-        font-size: 25px;
-    }
-    .pricing-card-description {
-        font-size: 20px;
-    }
-    .pricing-list {
-        font-size: 1rem;
-    }
-}
 @media screen and (max-width: 980px) {
     .pricing-cards{
      flex-direction: column;
@@ -377,15 +366,6 @@ a {
     flex-direction: row;
     gap: 3rem;
 }
-.pricing-button {
-    font-size: 1rem;
-}
-}
-@media screen and (max-width: 780px) {
-    .pricing-card {
-        width: 90%;
-    }
-    
 }
 @media screen and (max-width: 600px) {
     .pricing-card {
@@ -395,18 +375,10 @@ a {
     }
     
 }
-@media screen and (max-width: 480px) {
-.pricing {
-    padding: 1rem;
-}
-.pricing-cards {
-    margin: 1rem;
-}
-}
+
 /*-------------------------------PROCESS--------------------------------*/
 .process-container {
     display: flex;
-    flex-direction: row;
 }
 .process-card {
     width: 100%; 
@@ -418,7 +390,7 @@ a {
     gap: 1rem;
 }
 .process-title {
-    font-size: 1.8rem;
+    font-size: var(--font-subtitle);
 }
 .process-subtitle {
     font-weight: 200;
@@ -428,7 +400,6 @@ a {
 .process-description {
     max-width: 80%;
     text-align: center;
-    font-size: 1.1rem;
     color: var(--light-color);
 }
 
@@ -465,7 +436,11 @@ a {
 @media screen and (max-width: 890px) {
     .process-card {
         min-height: 25vh;
-    }}
+    }
+    .process-container {
+    flex-direction: column;
+}
+}
 
 @media screen and (max-width: 780px) { 
 .process {
@@ -507,11 +482,10 @@ a {
     font-weight: 300;
 }
 
-/*------------------FAQ SECTION--------------------
+/*------------------FAQ SECTION--------------------*/
 .faq-section {
-    background: #fdfdfd;
+    background: var(--text-color);
     min-height: 100vh;
-    padding: 10vh 0 0;
 }
 .faq-title h2 {
   position: relative;
@@ -520,13 +494,14 @@ a {
   font-weight: 600;
   line-height: 1;
 }
+
 .faq-title h2::before {
     content: "";
     position: absolute;
     left: 50%;
     width: 60px;
     height: 2px;
-    background: #E91E63;
+    background: var(--accent-color);
     bottom: -25px;
     margin-left: -30px;
 }
@@ -573,9 +548,8 @@ a {
   padding-left: 30px;
   padding-right: 30px;
   font-weight: 400;
-  font-size: 15px;
   letter-spacing: 1px;
-  color: #3B566E;
+  color: #040404;
   text-decoration: none !important;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -596,9 +570,9 @@ a {
   -moz-border-radius: 100px;
   border-radius: 100px;
   text-align: center;
-  background: #E91E63;
-  color: #fff;
-  font-size: 12px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  font-size: var(--font-sm-text);
   margin-right: 20px;
 }
 
@@ -608,7 +582,7 @@ a {
   padding-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
-  color: #6F8BA4;
+  color: #050708;
   line-height: 28px;
   letter-spacing: 1px;
   border-top: 1px solid #F3F8FF;
