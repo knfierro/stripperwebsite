@@ -36,7 +36,8 @@
   --container-sm: 600px;
 
   --title-margin-bottom: 3rem;
-  --title-padding: 2rem;
+  --text-padding: 2rem 0;
+  --section-padding: 4rem 0; 
     
 }
 @font-face {
@@ -50,7 +51,6 @@
 /*
   EFFECTS TO ADD: 
   1. DARK GRADIENT THAT SLIDES UP REVEALING PHOTOS
-  2. FIX STICKY NAV 
   3. FADE IN TEXT EFFECTS 
   4. GLOW ON HOVER FOR BUTTON EFFECT 
   */
@@ -75,6 +75,7 @@ body {
   width: 90%;
   max-width: var(--container-lg);
   margin-inline: auto;
+  padding: var(--section-padding);
 }
 .tit-pad {
     padding: var(--title-padding);
@@ -82,6 +83,7 @@ body {
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
+
 header {
     position: sticky;
     top: 0;
@@ -212,7 +214,7 @@ header {
 
 /*-------------------------HERO SECTION---------------------------------*/
 
-.section    {
+.section {
     min-height: min-content;
     display: flex;
     align-items: center;
@@ -231,6 +233,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero-cont {
@@ -243,6 +246,7 @@ header {
 
 .hero-text {
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 100%;
 }
@@ -262,14 +266,6 @@ header {
     font-weight: 200;
     margin-bottom: var(--title-margin-bottom);
 }
-.subtitle {
-  font-size: var(--font-subtitle);
-}
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    /*margin-top: 100px*/
-}
 button {
     width: 200px;
     height: 60px;
@@ -278,31 +274,58 @@ button {
     font-size: var(--font-med-text);
     letter-spacing: var(--letter-spacing-widest);
     border: solid 1px var(--light-color);
+    padding: 12px;
 }
 
 a {
     text-decoration: none;
     color: var(--light-color)
 }
+a:hover {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+   backdrop-filter: blur(10px); /* Creates the blur effect */
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 0 1em var(--text-color), inset 0 0 1em var(--text-color);
+}
+.hero-buttons:hover {
+    background-color: var(--text-color);
+    color: var(--dark-color);
+    box-shadow: 0 0 3em 0.5em var(--text-color);
+}
 
 /*-------------------------CTA SECTION---------------------------------*/
-
-.cta-text-box {
-    padding: var(--medium-spacing);
-    width: var(--text-width);
-    text-align: center;
+.cta {
+    color: var(--text-color);
 }
-.cta-text {
-    color: hsla(rgb(198, 189, 189) 50%);
+.cta-title {
+  font-size: var(--font-subtitle);
+}
+.cta-text, .cta-subtitle {
+    padding: var(--text-padding);
 }
 
 /*-------------------------PRICING SECTION---------------------------------*/
-
+.pricing {
+    background-image: url("assets/photos/leather-texture.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .pricing-title {
     font-size: var(--font-subtitle);
 }
 .pricing-subtitle {
      font-size: var(--font-sm-text);
+}
+.pricing-title, .pricing-subtitle {
+    padding: var(--text-padding);
 }
 .pricing-description {
     font-size: 25px;
@@ -312,13 +335,15 @@ a {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 .pricing-card {
     width: 350px;
     height: 90%;
-    background-color: var(--text-color);
-    color: black;
-
+    background: rgba(54, 45, 32, 0.1); /* Semi-transparent background */
+   backdrop-filter: blur(10px); /* Creates the blur effect */
+   -webkit-backdrop-filter: blur(10px); /* Safari support */
+   border: solid 0.5px var(--light-color);
 
 }
 .pricing-card-title {
@@ -377,6 +402,7 @@ a {
 }
 
 /*-------------------------------PROCESS--------------------------------*/
+
 .process-container {
     display: flex;
 }
@@ -417,15 +443,7 @@ a {
 .bouncy-icon:hover {
     animation: bounce 1s linear ; 
 }
-@media screen and (max-width: 890px) { 
-.features {
-    min-height: 90vh; 
-    flex-direction: column;
-}
-.process-description {
-    max-width: 70%;
-}
-}
+
 
 
 @media screen and (max-width: 1450px) /* Applies to screens smaller than 1450px */ {
@@ -439,6 +457,7 @@ a {
     }
     .process-container {
     flex-direction: column;
+    gap: 2rem;
 }
 }
 
@@ -483,10 +502,7 @@ a {
 }
 
 /*------------------FAQ SECTION--------------------*/
-.faq-section {
-    background: var(--text-color);
-    min-height: 100vh;
-}
+
 .faq-title h2 {
   position: relative;
   margin-bottom: 45px;
