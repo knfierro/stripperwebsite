@@ -5,6 +5,7 @@
 
   /* Neutrals */
   --light-color:       #eee2d1;
+  --light-opacity:  rgba(232, 228, 215, 50%);
   --dark-color:        #170d0d;
   --accent-color:      #4f2c18;
   --text-color:        rgb(232, 228, 215);
@@ -53,17 +54,17 @@
 /*
   EFFECTS TO ADD: 
   1. DARK GRADIENT THAT SLIDES UP REVEALING PHOTOS
-  2. Flashlight button to reveal the photos 
   3. FADE IN TEXT EFFECTS 
   Overlay on photos for smokier color
   Make it rain effect 
-  Add blinking glow to hero-button 
   Fix footer 
   Add photo after pricing to break up page. 
   Add google review section 
   disable paralax for mobile 
 
   4. GLOW ON HOVER FOR BUTTON EFFECT
+  Flashlight button to reveal the photos 
+  Add blinking glow to hero-button 
 
 
   */
@@ -228,7 +229,7 @@ header {
 }
 }
 
-/*-------------------------HERO SECTION---------------------------------*/
+/*-------------------------GLOBAL SETTINGS AND PAGE ANIMATIONS---------------------------------*/
 
 .section {
     min-height: min-content;
@@ -261,6 +262,7 @@ header {
         opacity: 1;
     }
 }
+/*-------------------------HERO SECTION ------------------------------------------------------------*/
 .hero {
     min-height: 80vh;
     background-image: url("assets/photos/exotic-dancer.jpg");
@@ -298,8 +300,8 @@ header {
 
 .hero-subheadline {
     font-size: var(--font-subtitle);
-    font-weight: 200;
     margin-bottom: var(--title-margin-bottom);
+    font-weight: 100;
 }
 button {
     width: 200px;
@@ -321,6 +323,7 @@ a:hover {
     color: var(--dark-color);
 }
 .hero-buttons {
+    font-size: 20px;
     display: flex;
     justify-content: center;
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
@@ -338,15 +341,12 @@ a:hover {
   25%  {box-shadow: 0 0 2em rgb(209, 192, 177), inset 0 0 2em var(--text-color);}
 }
 
-    /*
-    
-    box-shadow: 0 0 1em var(--text-color), inset 0 0 1em var(--text-color);
-}*/
 .hero-buttons:hover {
     background-color: var(--text-color);
     color: var(--dark-color);
     box-shadow: 0 0 3em 0.5em var(--text-color);
 }
+
 
 /*-------------------------CTA SECTION---------------------------------*/
 .cta {
@@ -370,7 +370,7 @@ a:hover {
 }
 .pricing-subtitle {
     font-size: var(--font-med-text);
-    padding: var(--text-padding)
+    margin-bottom: 3rem;
 }
 
 .pricing-description {
@@ -386,13 +386,20 @@ a:hover {
 }
 .pricing-card {
     width: 350px;
-    height: 90%;
+    padding: 1rem;
     background: rgba(54, 45, 32, 0.1); /* Semi-transparent background */
    backdrop-filter: blur(10px); /* Creates the blur effect */
    -webkit-backdrop-filter: blur(10px); /* Safari support */
    border: solid 0.5px var(--light-color);
-
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
+
+
 .pricing-card-title {
     letter-spacing: var(--letter-spacing-med);
     text-transform: uppercase;
@@ -404,17 +411,15 @@ a:hover {
     height: 100%;
 }
 
-.pricing-card {
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
 .pricing-list {
     font-size: 1.2rem;
     text-align: left;
+}
+li {
+    list-style-type: none;
+}
+.opacity {
+    color: var(--light-opacity);
 }
 .pricing-button {
     width: 200px;
@@ -476,10 +481,11 @@ a:hover {
     color: var(--light-color);
 }
 
-.icon-arrow {
+.bouncy-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: bounce 1s linear;
 }
 @keyframes bounce {
     0% { transform: translateY(0); }
@@ -491,13 +497,6 @@ a:hover {
     animation: bounce 1s linear ; 
 }
 
-
-
-@media screen and (max-width: 1450px) /* Applies to screens smaller than 1450px */ {
-.icon-arrow {
-    display: none; /* Hides the icon-arrow element on smaller screens */
-}
-}
 @media screen and (max-width: 890px) {
     .process-card {
         min-height: 25vh;
@@ -516,8 +515,13 @@ a:hover {
 }
 .feature-description {
     max-width: 70%;
+ }
+  
+   .hero, .pricing  {
+    background-attachment: scroll;
+   }
 }
-}
+
 
 footer {
 min-width: 100%;
@@ -664,101 +668,51 @@ a {
     line-height: 26px;
     margin-top: 10px;
   }
-}
 
-#tease-section {
-    background-image: url("assets/photos/Woman\ lying\ down\ with\ hand\ on\ stomach.jpg");
-    background-position: center;
-    background-repeat: none;
+  /*--------------------------------------------- FLASHLIGHT / TEASE SECTION -----------------------------------------------/*/
 }
-#app {
+.tease-title {
+    text-align: center;
+    margin: 0 auto;
+    padding: var(--title-padding);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--font-subtitle);
+    color: var(--dark-color);
+    position: absolute;
+    color: var(--accent-color);
+    top: 250px;
+    left: 700px;
+}
+#flashlight-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url('assets/photos/Woman\ lying\ down\ with\ hand\ on\ stomach.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
-
-#wrapper {
-  position: relative;
-  transform: translateZ(0px);
+.tease-title {
+    text-align: center;
+    margin: 0 auto;
+    padding: var(--title-padding);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--font-subtitle);
+    color: var(--dark-color);
+    position: absolute;
+    top: 100;
+    left: 30;
+}
+.overlay {
+  background: #000;
   width: 100%;
-  height: 50vh;
+  height: 100vh;
 }
-
-#bulb-cover {
- padding: 0 1rem 1rem 1rem;
- width: 10px;
- height: 10px;
-}
-
-#bulb {
-  border-radius: 90%;
-  padding: 0.5rem 1rem;
-  color: white;
-  background: black;
-  aspect-ratio: 1/1;
-  border: 1px solid rgba(64, 64, 64, 1);
-  box-shadow: 0px 0px 8px 0px rgba(12, 12, 12, 1);
-  transform: rotate(0deg);
-  will-change: transform;
-  animation: rotate-bulb 5s infinite;
-}
-
-#light {
+.light {
   position: absolute;
-  top: 3.25rem;
-  left: 50%;
-  background: black;
-  border: 5rem inset transparent;
-  border-top: 0;
-  border-bottom: 50vh inset rgba(255, 255, 255, .9);
-  transform-origin: top center;
-  transform: translateX(-50%) rotate(60deg);
-  filter: blur(1.5rem);
-  mix-blend-mode: color-dodge;
-  z-index: 10;
-  pointer-events: none;
-  will-change: transform;
-  animation: rotate-light 5s infinite;
+  width: 100%;
+  height: 100%;
+  background: #000;
 }
 
-#text-box {
-  flex: 1;
-  color: rgb(64, 64, 64);
-  line-height: 1.3;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-#app.lighter #wrapper, #app.lighter #bulb {
-  background-color: rgb(12, 12, 12);
-}
-
-@keyframes rotate-light {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  25% {
-    transform: translateX(-50%) rotate(60deg);
-  }
-  75% {
-    transform: translateX(-50%) rotate(-60deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-}
-
-
-@keyframes rotate-bulb {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(60deg);
-  }
-  75% {
-    transform: rotate(-60deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
