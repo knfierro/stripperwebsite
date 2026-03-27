@@ -12,14 +12,16 @@
 
   /* ── TYPOGRAPHY ─────────────────────────── */
 
-  --font-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  /*--font-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;*/
+  --font-sans: 'Switzer-Black';
   --font-serif:   'Times New Roman', serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   --font-sm-text:   0.8rem; 
-  --font-med-text:   1.3rem;  
+  --font-med-text:   1rem;  
   --font-subtitle: clamp(1.5rem, 2.5vw, 2rem);
   --font-title:   clamp(3rem, 4.5vw, 6.5rem);
+  --font-large-text: clamp(2rem, 3.5vw, 5rem);
 
   --font-weight-light:    300;
 
@@ -51,8 +53,19 @@
 /*
   EFFECTS TO ADD: 
   1. DARK GRADIENT THAT SLIDES UP REVEALING PHOTOS
+  2. Flashlight button to reveal the photos 
   3. FADE IN TEXT EFFECTS 
-  4. GLOW ON HOVER FOR BUTTON EFFECT 
+  Overlay on photos for smokier color
+  Make it rain effect 
+  Add blinking glow to hero-button 
+  Fix footer 
+  Add photo after pricing to break up page. 
+  Add google review section 
+  disable paralax for mobile 
+
+  4. GLOW ON HOVER FOR BUTTON EFFECT
+
+
   */
 
 *,
@@ -63,7 +76,7 @@
   padding: 0;
 }
 html {
-    font-size: 15px;
+    font-size: 16px;
 }
 body {
     background-color: var(--dark-color);
@@ -80,6 +93,9 @@ body {
 .tit-pad {
     padding: var(--title-padding);
 }
+.small-text {
+    font-size: var(--font-sm-text);
+}
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
@@ -90,7 +106,7 @@ header {
     z-index: 1000;
 }
  nav {
-   height: 100px;
+   height:160px;
    display: flex;
    align-items: center;
    background-color: var(--dark-color);
@@ -226,6 +242,24 @@ header {
     width: 90%;
     max-width: var(--container-lg);
     margin-inline: auto;
+    padding: 9rem 0;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.fade-up {
+    animation: fade-up 2s linear forwards;
+}
+@keyframes fade-up {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(-50px);
+        opacity: 1;
+    }
 }
 .hero {
     min-height: 80vh;
@@ -254,6 +288,7 @@ header {
   letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
   font-size: var(--font-subtitle);
+  font-family: 'Times New Roman', Times, serif ;
 }
  .hero-headline {
     font-size: var(--font-title);
@@ -291,8 +326,22 @@ a:hover {
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
    backdrop-filter: blur(10px); /* Creates the blur effect */
    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    box-shadow: 0 0 1em var(--text-color), inset 0 0 1em var(--text-color);
 }
+.color-change {
+    animation: color-change 6s linear infinite;
+
+}
+@keyframes color-change {s
+  0%   {box-shadow: 0 0 1em var(--text-color), inset 0 0 1em var(--text-color);}
+  25%  {box-shadow: 0 0 2em rgb(229, 234, 102), inset 0 0 2em var(--text-color);}
+  50% {box-shadow: 0 0 3em rgb(255, 249, 253), inset 0 0 3em var(--text-color);}
+  25%  {box-shadow: 0 0 2em rgb(209, 192, 177), inset 0 0 2em var(--text-color);}
+}
+
+    /*
+    
+    box-shadow: 0 0 1em var(--text-color), inset 0 0 1em var(--text-color);
+}*/
 .hero-buttons:hover {
     background-color: var(--text-color);
     color: var(--dark-color);
@@ -303,10 +352,8 @@ a:hover {
 .cta {
     color: var(--text-color);
 }
-.cta-title {
-  font-size: var(--font-subtitle);
-}
-.cta-text, .cta-subtitle {
+
+.cta-text, .cta-subtitle, .cta-title {
     padding: var(--text-padding);
 }
 
@@ -322,13 +369,13 @@ a:hover {
     font-size: var(--font-subtitle);
 }
 .pricing-subtitle {
-     font-size: var(--font-sm-text);
+    font-size: var(--font-med-text);
+    padding: var(--text-padding)
 }
-.pricing-title, .pricing-subtitle {
-    padding: var(--text-padding);
-}
+
 .pricing-description {
     font-size: 25px;
+    line-height: 1.2;
 }
 .pricing-cards {
     display: flex;
@@ -476,7 +523,6 @@ footer {
 min-width: 100%;
 padding: 5rem;
 background-color: var(--off-white-color);
-color: black;
 }
 
 .footer-items {
@@ -509,6 +555,7 @@ a {
   display: inline-block;
   font-weight: 600;
   line-height: 1;
+  font-family: var(--font-sans);
 }
 
 .faq-title h2::before {
@@ -532,15 +579,16 @@ a {
 }
 
 .faq {
-  background: #FFFFFF;
+  background: var(--light-color);
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+  font-family: var(--font-sans);
 }
 
 .faq .card {
   border: none;
   background: none;
-  border-bottom: 1px dashed #CEE1F8;
+  border-bottom: 1px dashed var(--accent-color);
 }
 
 .faq .card .card-header {
@@ -554,7 +602,7 @@ a {
 }
 
 .faq .card .card-header:hover {
-    background: rgba(233, 30, 99, 0.1);
+    background: var(--accent-color, 50%);
     padding-left: 10px;
 }
 .faq .card .card-header .faq-title {
@@ -565,7 +613,7 @@ a {
   padding-right: 30px;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #040404;
+  color: var(--dark-color);
   text-decoration: none !important;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -615,5 +663,102 @@ a {
   .faq .card .card-header .faq-title {
     line-height: 26px;
     margin-top: 10px;
+  }
+}
+
+#tease-section {
+    background-image: url("assets/photos/Woman\ lying\ down\ with\ hand\ on\ stomach.jpg");
+    background-position: center;
+    background-repeat: none;
+}
+#app {
+  overflow: hidden;
+}
+
+#wrapper {
+  position: relative;
+  transform: translateZ(0px);
+  width: 100%;
+  height: 50vh;
+}
+
+#bulb-cover {
+ padding: 0 1rem 1rem 1rem;
+ width: 10px;
+ height: 10px;
+}
+
+#bulb {
+  border-radius: 90%;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: black;
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(64, 64, 64, 1);
+  box-shadow: 0px 0px 8px 0px rgba(12, 12, 12, 1);
+  transform: rotate(0deg);
+  will-change: transform;
+  animation: rotate-bulb 5s infinite;
+}
+
+#light {
+  position: absolute;
+  top: 3.25rem;
+  left: 50%;
+  background: black;
+  border: 5rem inset transparent;
+  border-top: 0;
+  border-bottom: 50vh inset rgba(255, 255, 255, .9);
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(60deg);
+  filter: blur(1.5rem);
+  mix-blend-mode: color-dodge;
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform;
+  animation: rotate-light 5s infinite;
+}
+
+#text-box {
+  flex: 1;
+  color: rgb(64, 64, 64);
+  line-height: 1.3;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+#app.lighter #wrapper, #app.lighter #bulb {
+  background-color: rgb(12, 12, 12);
+}
+
+@keyframes rotate-light {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-50%) rotate(60deg);
+  }
+  75% {
+    transform: translateX(-50%) rotate(-60deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+
+
+@keyframes rotate-bulb {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(60deg);
+  }
+  75% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
