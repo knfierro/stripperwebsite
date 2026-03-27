@@ -75,6 +75,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: solid 1px red;
 }
 html {
     font-size: 16px;
@@ -82,7 +83,6 @@ html {
 body {
     background-color: var(--dark-color);
     color: var(--light-color);
-    font-family: 'Switzer-Black', sans-serif;
     line-height: 1.5;
 }
 .container {
@@ -322,7 +322,11 @@ a:hover {
     text-decoration: none;
     color: var(--dark-color);
 }
-.hero-buttons {
+
+.hero-b {
+    width: 500px;
+}
+.buttons {
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -352,7 +356,18 @@ a:hover {
 .cta {
     color: var(--text-color);
 }
+.cta-text-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
+.cta-text {
+    width: 90%;
+    font-weight: 200;
+}
 .cta-text, .cta-subtitle, .cta-title {
     padding: var(--text-padding);
 }
@@ -523,34 +538,6 @@ li {
 }
 
 
-footer {
-min-width: 100%;
-padding: 5rem;
-background-color: var(--off-white-color);
-}
-
-.footer-items {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    width: 50%;
-    margin: 0 auto;
-    padding-bottom: 2rem;
-}
-
-
-.footer-foot {
-    padding-top: 2rem;
-    text-align: center;
-    border-top: solid 1px var(--main-black);
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 300;
-}
-
 /*------------------FAQ SECTION--------------------*/
 
 .faq-title h2 {
@@ -715,4 +702,35 @@ a {
   height: 100%;
   background: #000;
 }
+/*------------------------------------FOOTER SECTION-------------------------------*/
 
+footer {
+width: 100%;
+padding: 5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.footer-items {
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer-foot {
+    padding-top: 2rem;
+    text-align: center;
+    border-top: solid 1px var(--main-black);
+}
+
+.footer-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 300;
+}
