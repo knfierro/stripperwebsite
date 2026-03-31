@@ -57,14 +57,15 @@
   3. FADE IN TEXT EFFECTS 
   Overlay on photos for smokier color
   Make it rain effect 
-  Fix footer 
   Add photo after pricing to break up page. 
   Add google review section 
   disable paralax for mobile 
+  correct the on-scroll effect: 
 
   4. GLOW ON HOVER FOR BUTTON EFFECT
   Flashlight button to reveal the photos 
   Add blinking glow to hero-button 
+  Fix footer 
 
 
   */
@@ -75,7 +76,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: solid 1px red;
 }
 html {
     font-size: 16px;
@@ -248,7 +248,7 @@ header {
 .underline {
     text-decoration: underline;
 }
-
+/*
 .fade-up {
     animation: fade-up 2s linear forwards;
 }
