@@ -331,6 +331,7 @@ a:hover {
     font-size: 20px;
     display: flex;
     justify-content: center;
+    gap: 2rem;
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Creates the blur effect */
    -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -452,7 +453,6 @@ a:hover {
 }
 .add-on {
     margin-bottom: var(--margin-bottom-medium);
-    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -461,6 +461,8 @@ a:hover {
 }
 .party-rules {
     border: solid 1px var(--light-color);
+    width: 80%;
+    padding: var(--text-padding);
 }
 .text-padding {
     padding: var(--text-padding);
