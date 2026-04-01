@@ -20,9 +20,10 @@
 
   --font-sm-text:   0.8rem; 
   --font-med-text:   1rem;  
+  --font-large-text: 1.5rem;
   --font-subtitle: clamp(1.5rem, 2.5vw, 2rem);
   --font-title:   clamp(3rem, 4.5vw, 6.5rem);
-  --font-large-text: clamp(2rem, 3.5vw, 5rem);
+ 
 
   --font-weight-light:    300;
 
@@ -38,18 +39,13 @@
   --container-md: 900px;
   --container-sm: 600px;
 
-  --title-margin-bottom: 3rem;
-  --text-padding: 2rem 0;
+  --margin-bottom-large: 3rem;
+  --margin-bottom-medium: 2rem;
+  --margin-bottom-small: 1rem;
+  --text-padding: 1.5rem 0;
   --section-padding: 4rem 0; 
     
 }
-@font-face {
-  font-family: 'Switzer-Black';
-  src: url('/assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff') format('woff'),
-       url('assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff') format('woff'),
-       url('assets/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regulat.ttf') format('truetype');
-}
-
 
 /*
   EFFECTS TO ADD: 
@@ -90,9 +86,6 @@ body {
   max-width: var(--container-lg);
   margin-inline: auto;
   padding: var(--section-padding);
-}
-.tit-pad {
-    padding: var(--title-padding);
 }
 .small-text {
     font-size: var(--font-sm-text);
@@ -243,10 +236,13 @@ header {
     width: 90%;
     max-width: var(--container-lg);
     margin-inline: auto;
-    padding: 9rem 0;
+    padding: 7rem 0;
 }
 .underline {
     text-decoration: underline;
+}
+.large-text {
+    font-size: var(--font-large-text);
 }
 /*
 .fade-up {
@@ -286,6 +282,9 @@ header {
     flex-direction: column;
     width: 100%;
 }
+.margin-btm-sm {
+    margin-bottom: var(--margin-bottom-small);
+}
 .location-text {
   letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
@@ -296,11 +295,13 @@ header {
     font-size: var(--font-title);
      font-weight: 400;
      padding: var(--title-padding);
+     margin-bottom: var(--margin-bottom-large);
     }
 
 .hero-subheadline {
     font-size: var(--font-subtitle);
-    margin-bottom: var(--title-margin-bottom);
+    margin-bottom: var(--margin-bottom-medium);
+    width: 80%;
     font-weight: 100;
 }
 button {
@@ -331,7 +332,7 @@ a:hover {
     display: flex;
     justify-content: center;
     background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-   backdrop-filter: blur(10px); /* Creates the blur effect */
+    backdrop-filter: blur(10px); /* Creates the blur effect */
    -webkit-backdrop-filter: blur(10px); /* Safari support */
 }
 .color-change {
@@ -351,12 +352,17 @@ a:hover {
     box-shadow: 0 0 3em 0.5em var(--text-color);
 }
 
-
+@media screen and (max-width:800px) {
+    .hero-subheadline {
+        width: 100%;
+    }
+    
+}
 /*-------------------------CTA SECTION---------------------------------*/
 .cta {
     color: var(--text-color);
 }
-.cta-text-box {
+.center-text-box {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -370,6 +376,9 @@ a:hover {
 }
 .cta-text, .cta-subtitle, .cta-title {
     padding: var(--text-padding);
+}
+.list {
+    text-align: left;
 }
 
 /*-------------------------PRICING SECTION---------------------------------*/
@@ -430,7 +439,7 @@ a:hover {
     font-size: 1.2rem;
     text-align: left;
 }
-li {
+.list-none {
     list-style-type: none;
 }
 .opacity {
@@ -441,7 +450,24 @@ li {
     height: 50px;
     font-size: 1.3rem;
 }
-
+.add-on {
+    margin-bottom: var(--margin-bottom-medium);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.party-rules {
+    border: solid 1px var(--light-color);
+}
+.text-padding {
+    padding: var(--text-padding);
+}
+.party-subtitle {
+    margin-bottom: var(--margin-bottom-medium);
+}
 @media screen and (max-width: 980px) {
     .pricing-cards{
      flex-direction: column;
