@@ -65,13 +65,14 @@
 
 
   */
-
+/*-------------------------GLOBAL SETTINGS AND PAGE ANIMATIONS---------------------------------*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: solid 1px orange;
 }
 html {
     font-size: 16px;
@@ -90,6 +91,53 @@ body {
 .small-text {
     font-size: var(--font-sm-text);
 }
+.margin-btm-sm {
+    margin-bottom: var(--margin-bottom-small);
+}
+.mg-btm-md {
+    margin-bottom: var(--margin-bottom-medium);
+}
+.mg-btm-lg {
+    margin-bottom: var(--margin-bottom-large);
+}
+.section {
+    min-height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-lg);
+    margin-inline: auto;
+    padding: 7rem 0;
+}
+.underline {
+    text-decoration: underline;
+}
+.large-text {
+    font-size: var(--font-large-text);
+}
+.tit-pad {
+    padding: var(--title-padding);
+}
+/*
+.fade-up {
+    animation: fade-up 2s linear forwards;
+}
+@keyframes fade-up {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+}
+    */
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
@@ -222,42 +270,7 @@ header {
 }
 }
 
-/*-------------------------GLOBAL SETTINGS AND PAGE ANIMATIONS---------------------------------*/
 
-.section {
-    min-height: min-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.container {
-    width: 90%;
-    max-width: var(--container-lg);
-    margin-inline: auto;
-    padding: 7rem 0;
-}
-.underline {
-    text-decoration: underline;
-}
-.large-text {
-    font-size: var(--font-large-text);
-}
-/*
-.fade-up {
-    animation: fade-up 2s linear forwards;
-}
-@keyframes fade-up {
-    from {
-        transform: translateY(0px);
-        opacity: 0;
-    }
-    to { 
-        transform: translateY(-50px);
-        opacity: 1;
-    }
-}
 /*-------------------------HERO SECTION ------------------------------------------------------------*/
 .hero {
     min-height: 80vh;
@@ -282,9 +295,6 @@ header {
     flex-direction: column;
     width: 100%;
 }
-.margin-btm-sm {
-    margin-bottom: var(--margin-bottom-small);
-}
 .location-text {
   letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
@@ -294,8 +304,7 @@ header {
  .hero-headline {
     font-size: var(--font-title);
      font-weight: 400;
-     padding: var(--title-padding);
-     margin-bottom: var(--margin-bottom-large);
+     margin-bottom: var(--margin-bottom-medium);
     }
 
 .hero-subheadline {
@@ -303,6 +312,11 @@ header {
     margin-bottom: var(--margin-bottom-medium);
     width: 80%;
     font-weight: 100;
+    line-height: 1.3;
+}
+.hero-location {
+    margin-bottom: var(--margin-bottom-medium);
+
 }
 button {
     width: 200px;
@@ -325,7 +339,7 @@ a:hover {
 }
 
 .hero-b {
-    width: 500px;
+    width: 350px;
 }
 .buttons {
     font-size: 20px;
@@ -381,7 +395,43 @@ a:hover {
 .list {
     text-align: left;
 }
-
+/*-------------------------PERFORMANCE GRID SECTION---------------------------------*/
+.performance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+}
+.perf-grid-box {
+    height: 400px;
+    width: 300px;
+    display: flex;
+}
+.perf-grid-box p {
+    display: flex;
+    align-items: end;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+.photo-one {
+    background-image: url("assets/photos/Women\ in\ black\ lingerie\ sitting\ on\ bed.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+.photo-two {
+    background-image: url("assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+.photo-three {
+    background-image: url("assets/photos/Women\ in\ black\ lingerie\ sitting\ on\ bed.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
 /*-------------------------PRICING SECTION---------------------------------*/
 .pricing {
     background-image: url("assets/photos/leather-texture.png");
@@ -452,23 +502,18 @@ a:hover {
     font-size: 1.3rem;
 }
 .add-on {
-    margin-bottom: var(--margin-bottom-medium);
+    margin: var(--margin-bottom-large);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.add-on-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-content: center;
-}
-.party-rules {
-    border: solid 1px var(--light-color);
-    width: 80%;
-    padding: var(--text-padding);
-}
-.text-padding {
-    padding: var(--text-padding);
-}
-.party-subtitle {
-    margin-bottom: var(--margin-bottom-medium);
+    gap: 1rem;
 }
 @media screen and (max-width: 980px) {
     .pricing-cards{
@@ -495,6 +540,24 @@ a:hover {
     }
     
 }
+
+/*---------------------PARTY RULES-------------------------------------*/
+
+.party-rules {
+    border: solid 1px var(--light-color);
+    width: 80%;
+    margin: auto;
+}
+.party-rule-text {
+    padding: 2rem 4rem;
+}
+.text-padding {
+    padding: var(--text-padding);
+}
+.party-subtitle {
+    margin-bottom: var(--margin-bottom-medium);
+}
+
 
 /*-------------------------------PROCESS--------------------------------*/
 
