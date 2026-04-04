@@ -432,6 +432,24 @@ a:hover {
     background-position: center;
     background-size: 100% auto;
 }
+/*-------------------------OFFERS SECTION---------------------------------*/
+
+.offers {
+    background-color: var(--accent-color);
+}
+/*-------------------------ENVO BUBBLES SECTION---------------------------------*/
+
+.envo-bubbles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+.envo-bubble {
+    height: 100px;
+    background-color: rgb(200, 165, 141);
+
+}
 /*-------------------------PRICING SECTION---------------------------------*/
 .pricing {
     background-image: url("assets/photos/leather-texture.png");
