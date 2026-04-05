@@ -889,6 +889,9 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  touch-action: none;
+  min-height: 60vh;
 }
 .tease-title {
     text-align: center;
@@ -913,6 +916,20 @@ a:hover {
   width: 100%;
   height: 100%;
   background: #000;
+
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+}
+
+@media (max-width: 580px) {
+    .tease-title {
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+        width: 90%; /* Keeps it from hitting the edges */
+        font-size: 24px;
+    }
 }
 /*------------------------------------FOOTER SECTION-------------------------------*/
 

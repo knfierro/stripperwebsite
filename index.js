@@ -1,15 +1,32 @@
-$(document).mousemove(function(e) {
-  // Check if mouse is inside the flashlight section
-  const section = $('#flashlight-section');
-  const offset = section.offset();
-  const x = e.pageX - offset.left;
-  const y = e.pageY - offset.top;
 
-  $('.light').css(
-    'background',
-    'radial-gradient(circle at ' + x + 'px ' + y + 'px, transparent 150px, #000 300px)'
-  );
-});
+
+function moveFlashlight(e) {
+    const section = $('#flashlight-section');
+    const offset = section.offset();
+    
+    // Get coordinates for either Mouse or Touch
+    let pageX, pageY;
+    if (e.type.includes('touch')) {
+        // Use the first finger touch point
+        pageX = e.originalEvent.touches[0].pageX;
+        pageY = e.originalEvent.touches[0].pageY;
+    } else {
+        pageX = e.pageX;
+        pageY = e.pageY;
+    }
+
+    const x = pageX - offset.left;
+    const y = pageY - offset.top;
+
+    $('.light').css(
+        'background',
+        'radial-gradient(circle at ' + x + 'px ' + y + 'px, transparent 100px, #000 200px)'
+    );
+}
+
+// Bind both mouse and touch events
+$(document).on('mousemove touchmove touchstart', moveFlashlight);
+
 
 gsap.from(".fade-up", {
   y: 50,
