@@ -242,12 +242,17 @@ header {
     .exit-svg {
         fill: var(--accent-color);
  }
- .logo {
+ .stripper-logo {
    display: none;
  }
    .burger-svg {
       fill: var(--dark-color);
    }
+.logo-mobile {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+}
 
  #sidebar-active:checked ~ #overlay{
     height: 100%;
@@ -394,6 +399,7 @@ a:hover {
 }
 .list {
     text-align: left;
+    list-style-type: none;
 }
 /*-------------------------PERFORMANCE GRID SECTION---------------------------------*/
 .performance-grid {
@@ -525,11 +531,29 @@ a:hover {
 }
 /*-------------------------PRICING SECTION---------------------------------*/
 .pricing {
+    position: relative;
+    overflow: hidden;
+/*
     background-image: url("assets/photos/leather-texture.png");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+}
+.pricing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/photos/leather-texture.png');
+    background-size: cover;
+    background-position: center;
+    
+    /* On Desktop: keep it fixed */
+    background-attachment: fixed;
+    z-index: -1;
 }
 .pricing-title {
     font-size: var(--font-subtitle);
@@ -608,19 +632,7 @@ a:hover {
 }
 @media screen and (max-width: 980px) {
     .pricing-cards{
-     flex-direction: column;
-}
-.pricing-subtitle {
-     padding-bottom: 0;
-}
-.pricing-cards {
-    margin: 1rem;
-}
-.pricing-card {
-    width: 80%;
-    padding: 2rem;
-    flex-direction: row;
-    gap: 3rem;
+     flex-wrap: wrap;
 }
 }
 @media screen and (max-width: 600px) {
@@ -630,6 +642,16 @@ a:hover {
         width: 90%;
     }
     
+}
+@media (max-width: 768px) {
+    .your-parallax-section::before {
+        /* This forces the image to behave on mobile */
+        background-attachment: scroll !important;
+        
+        /* Optional: If it still looks slightly off, 
+           manually reset the height to the viewport */
+        height: 100%; 
+    }
 }
 /*---------------------PARTY RULES-------------------------------------*/
 
@@ -845,18 +867,7 @@ a:hover {
 
   /*--------------------------------------------- FLASHLIGHT / TEASE SECTION -----------------------------------------------/*/
 }
-.tease-title {
-    text-align: center;
-    margin: 0 auto;
-    padding: var(--title-padding);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: var(--font-subtitle);
-    color: var(--dark-color);
-    position: absolute;
-    color: var(--accent-color);
-    top: 250px;
-    left: 700px;
-}
+
 #flashlight-section {
   position: relative;
   width: 100%;
@@ -875,13 +886,15 @@ a:hover {
     font-size: var(--font-subtitle);
     color: var(--dark-color);
     position: absolute;
-    top: 100;
-    left: 30;
+    color: rgb(87, 16, 16);
+    top: 250px;
+    left: 700px;
 }
 .overlay {
   background: #000;
   width: 100%;
   height: 100vh;
+  opacity: 97%;
 }
 .light {
   position: absolute;
