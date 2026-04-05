@@ -82,8 +82,10 @@ body {
     background-color: var(--dark-color);
     color: var(--light-color);
     line-height: 1.5;
+}
+html, body {
     overflow-x: hidden; /* Added to hide the mobile glitch*/
-     position: relative;
+    position: relative;
     max-width: 100%;
 }
 .container {
@@ -248,11 +250,6 @@ header {
    .burger-svg {
       fill: var(--dark-color);
    }
-.logo-mobile {
-    display: block;
-    padding: 10px;
-    margin-top: 10px;
-}
 
  #sidebar-active:checked ~ #overlay{
     height: 100%;
@@ -269,13 +266,27 @@ header {
     font-size: 20px;
     font-weight: 200;
     position: absolute;
-    left: 20%;
-    top: 4%;
-    transform: translateX(-50%);
+    transform: translateX(-50%, -50%);
+    height: 50px; /* Reduced for mobile space */
+    width: auto;
+    left: 85%; /* Center it properly */
+    top: 15%;
+
+}
+nav {
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 15px;
 }
 }
 
 
+@media screen and (max-width:780px) {
+    .container {
+  width: 100%;
+}
+    
+}
 /*-------------------------HERO SECTION ------------------------------------------------------------*/
 .hero {
     min-height: 80vh;
@@ -678,7 +689,9 @@ a:hover {
     }
  }
 /*-------------------------------PROCESS--------------------------------*/
-
+.main-process-title {
+    color: var(--accent-color);
+}
 .process-container {
     display: flex;
 }
@@ -725,6 +738,7 @@ a:hover {
     .process-card {
         min-height: 25vh;
     }
+
     .process-container {
     flex-direction: column;
     gap: 2rem;
