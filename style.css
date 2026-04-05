@@ -76,6 +76,7 @@
 }
 html {
     font-size: 16px;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 body {
@@ -83,11 +84,14 @@ body {
     color: var(--light-color);
     line-height: 1.5;
 }
+/*
 html, body {
-    overflow-x: hidden; /* Added to hide the mobile glitch*/
+    overflow-x: hidden; /* Added to hide the mobile glitch
     position: relative;
     max-width: 100%;
-}
+}*/
+
+
 .container {
   width: 90%;
   max-width: var(--container-lg);
@@ -123,21 +127,7 @@ html, body {
 .tit-pad {
     padding: var(--title-padding);
 }
-/*
-.fade-up {
-    animation: fade-up 2s linear forwards;
-}
-@keyframes fade-up {
-    from {
-        transform: translateY(0px);
-        opacity: 0;
-    }
-    to { 
-        transform: translateY(-50px);
-        opacity: 1;
-    }
-}
-    */
+
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
@@ -148,6 +138,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    background: transparent;
 }
  nav {
    height:160px;
@@ -286,6 +277,11 @@ nav {
   width: 100%;
 }
     
+}
+
+main {
+    overflow-x: hidden; 
+    width: 100%;
 }
 /*-------------------------HERO SECTION ------------------------------------------------------------*/
 .hero {
@@ -658,6 +654,8 @@ a:hover {
     .your-parallax-section::before {
         /* This forces the image to behave on mobile */
         background-attachment: scroll !important;
+        background-size: 100% auto !important;
+        background-position: top center;
         
         /* Optional: If it still looks slightly off, 
            manually reset the height to the viewport */
