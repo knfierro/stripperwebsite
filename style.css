@@ -557,7 +557,6 @@ a:hover {
     }
     
 }
-
 /*---------------------PARTY RULES-------------------------------------*/
 
 .party-rules {
@@ -641,7 +640,7 @@ a:hover {
  }
   
    .hero, .pricing  {
-    background-attachment: scroll;
+    background-attachment: scroll !important;
    }
 }
 
