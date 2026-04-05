@@ -478,17 +478,19 @@ a:hover {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
     transition: background-size 0.5s ease;
+    filter: grayscale(80%);
+    background-size: 100%; 
     
     /* Optional: Improves text readability over images */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8); 
     color: white;
 
 }
-.is-active {
-    background-size: 100%;
-}
-.envo-bubble:hover {
-    background-size: 130%; /* Or 'cover' if you prefer */
+
+.envo-bubble:hover,
+.envo-bubble .is-active {
+    background-size: 130%; 
+    filter: grayscale(0%);
 }
 .private {
     background-image: url(assets/photos/Blonde\ Stripper\ wearing\ black\ bra.png);

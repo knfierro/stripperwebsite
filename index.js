@@ -17,26 +17,29 @@ gsap.from(".fade-up", {
   duration: 1,
   delay: 0.3
 });
-// Select all bubbles
+
+
 const bubbles = document.querySelectorAll('.envo-bubble');
 
 bubbles.forEach(bubble => {
     bubble.addEventListener('click', function(e) {
-        // Prevent the "click outside" logic from firing immediately
+        // Prevent clicking the bubble from immediately triggering the "click-outside" reset
         e.stopPropagation();
 
-        // If you want only one bubble to be zoomed out at a time, 
-        // remove 'is-active' from all others first:
-        bubbles.forEach(b => {
-            if (b !== bubble) b.classList.remove('is-active');
-        });
+        // Check if this bubble is already zoomed in
+        const isActive = this.classList.contains('is-active');
 
-        // Toggle the zoom-out effect on the tapped bubble
-        this.classList.toggle('is-active');
+        // Reset all bubbles first (so only one is zoomed at a time)
+        bubbles.forEach(b => b.classList.remove('is-active'));
+
+        // If it wasn't active before, make it active now
+        if (!isActive) {
+            this.classList.add('is-active');
+        }
     });
 });
 
-// Reset the bubbles if the user taps anywhere else on the screen
+// Reset if the user taps anywhere else on the page
 document.addEventListener('click', () => {
-    bubbles.forEach(bubble => bubble.classList.remove('is-active'));
+    bubbles.forEach(b => b.classList.remove('is-active'));
 });
