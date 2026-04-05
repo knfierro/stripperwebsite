@@ -473,7 +473,53 @@ a:hover {
 .envo-bubble {
     height: 100px;
     background-color: rgb(200, 165, 141);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-size 0.5s ease;
+    
+    /* Optional: Improves text readability over images */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8); 
+    color: white;
 
+}
+.is-active {
+    background-size: 100%;
+}
+.envo-bubble:hover {
+    background-size: 130%; /* Or 'cover' if you prefer */
+}
+.private {
+    background-image: url(assets/photos/Blonde\ Stripper\ wearing\ black\ bra.png);
+    background-position: center;
+}
+.bachelor {
+    background-image: url(assets/photos/brunette\ scottsdale\ stripper\ in\ black\ latex\ halter.jpg);
+    background-position: center;
+}
+.golf {
+     background-image: url(assets/photos/Stripper\ holding\ breasts\ at\ golf\ course.jpg);
+    background-position: center;
+}
+.vip {
+     background-image: url(assets/photos/Red\ headed\ stripper\ in\ costume.png);
+    background-position: center;
+}
+.pool {
+     background-image: url(assets/photos/blonde\ stripper\ at\ pool\ party.jpg);
+    background-position: center;
+}
+.military {
+     background-image: url(assets/photos/Stripper\ in\ military\ uniform.png);
+    background-position: center;
+}
+
+@media screen and (max-width: 780px) {
+    .envo-bubbles {
+        grid-template-columns: 1fr 1fr;
+    }
+    
 }
 /*-------------------------PRICING SECTION---------------------------------*/
 .pricing {
