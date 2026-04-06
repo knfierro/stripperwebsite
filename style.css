@@ -549,7 +549,7 @@ a:hover {
 }
 .pricing::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -557,8 +557,6 @@ a:hover {
     background-image: url('assets/photos/leather-texture.png');
     background-size: cover;
     background-position: center;
-    
-    /* On Desktop: keep it fixed */
     background-attachment: fixed;
     z-index: -1;
 }
