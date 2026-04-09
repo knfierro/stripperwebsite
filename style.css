@@ -43,9 +43,11 @@
   --margin-bottom-medium: 2rem;
   --margin-bottom-small: 1rem;
   --text-padding: 1.5rem 0;
-  --section-padding: 4rem 0; 
+  --section-padding: 6rem 0; 
     
 }
+
+
 
 /*
   EFFECTS TO ADD: 
@@ -274,7 +276,7 @@ nav {
 
 @media screen and (max-width:780px) {
     .container {
-  width: 100%;
+  width: 95%;
 }
     
 }
@@ -650,12 +652,8 @@ a:hover {
 }
 @media (max-width: 768px) {
     .pricing {
-        position: static;
-        background-image: url("assets/photos/leather-texture.png");
-        background-size: cover;
-        background-attachment: scroll;
-        background-position: center;
-        background-repeat: no-repeat;*/
+        background-image: none;
+        background-color: var(--accent-color);
 }
     }
 
@@ -669,15 +667,13 @@ a:hover {
 .party-rule-text {
     padding: 2rem 4rem;
 }
-.text-padding {
-    padding: var(--text-padding);
-}
 .party-subtitle {
     margin-bottom: var(--margin-bottom-medium);
+    font-size: var(--font-med-text);
 }
  @media(max-width: 950px) {
     .party-rules {
-        width: 100%;
+        width: 95%;
     }
     .party-rule-text {
         padding: 1rem;
@@ -755,6 +751,12 @@ a:hover {
    }
 }
 
+/*------------------CONTACT SECTION--------------------*/
+
+#contact-section {
+    color: black;
+    background-color: var(--light-color);
+}
 
 /*------------------FAQ SECTION--------------------*/
 
