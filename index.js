@@ -28,12 +28,6 @@ function moveFlashlight(e) {
 $(document).on('mousemove touchmove touchstart', moveFlashlight);
 
 
-gsap.from(".fade-up", {
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  delay: 0.3
-});
 
 
 const bubbles = document.querySelectorAll('.envo-bubble');
@@ -60,3 +54,13 @@ bubbles.forEach(bubble => {
 document.addEventListener('click', () => {
     bubbles.forEach(b => b.classList.remove('is-active'));
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 }); // Triggers when 10% of the element is visible
+  
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));

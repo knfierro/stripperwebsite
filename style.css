@@ -25,7 +25,7 @@
   --font-title:   clamp(3rem, 4.5vw, 6.5rem);
  
 
-  --font-weight-light:    300;
+  --font-weight-light: 100;
 
   --line-height-tight:   1.2;
   --letter-spacing-widest:  0.15em;
@@ -47,26 +47,6 @@
     
 }
 
-
-
-/*
-  EFFECTS TO ADD: 
-  1. DARK GRADIENT THAT SLIDES UP REVEALING PHOTOS
-  3. FADE IN TEXT EFFECTS 
-  Overlay on photos for smokier color
-  Make it rain effect 
-  Add photo after pricing to break up page. 
-  Add google review section 
-  disable paralax for mobile 
-  correct the on-scroll effect: 
-
-  4. GLOW ON HOVER FOR BUTTON EFFECT
-  Flashlight button to reveal the photos 
-  Add blinking glow to hero-button 
-  Fix footer 
-
-
-  */
 /*-------------------------GLOBAL SETTINGS AND PAGE ANIMATIONS---------------------------------*/
 *,
 *::before,
@@ -86,13 +66,6 @@ body {
     color: var(--light-color);
     line-height: 1.5;
 }
-/*
-html, body {
-    overflow-x: hidden; /* Added to hide the mobile glitch
-    position: relative;
-    max-width: 100%;
-}*/
-
 
 .container {
   width: 90%;
@@ -119,9 +92,11 @@ html, body {
     justify-content: center;
     text-align: center;
 }
-
-.underline {
-    text-decoration: underline;
+.light-weight{
+    font-weight: var(--font-weight-light);
+}
+.italic {
+    font-style: italic;
 }
 .large-text {
     font-size: var(--font-large-text);
@@ -129,7 +104,31 @@ html, body {
 .tit-pad {
     padding: var(--title-padding);
 }
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
@@ -411,6 +410,10 @@ a:hover {
     list-style-type: none;
 }
 /*-------------------------PERFORMANCE GRID SECTION---------------------------------*/
+.performers {
+    text-align: center;
+}
+
 .performance-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -548,20 +551,7 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;*/
 }
-/*
-.pricing::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('assets/photos/leather-texture.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -1;
-}*/
+
 .pricing-title {
     font-size: var(--font-subtitle);
 }
@@ -756,6 +746,11 @@ a:hover {
 #contact-section {
     color: black;
     background-color: var(--light-color);
+}
+.contact-box {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
 }
 
 /*------------------FAQ SECTION--------------------*/
