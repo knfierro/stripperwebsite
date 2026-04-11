@@ -20,7 +20,7 @@
 
   --font-sm-text:   0.8rem; 
   --font-med-text:   1rem;  
-  --font-large-text: 1.5rem;
+  --font-large-text: clamp(1.3rem, 2vw, 1.8rem);
   --font-subtitle: clamp(1.5rem, 2.5vw, 2rem);
   --font-title:   clamp(3rem, 4.5vw, 6.5rem);
  
@@ -73,8 +73,18 @@ body {
   margin-inline: auto;
   padding: var(--section-padding);
 }
+.section {
+    min-height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .small-text {
     font-size: var(--font-sm-text);
+}
+.lg-text {
+    font-size: var(--font-large-text);
 }
 .margin-btm-sm {
     margin-bottom: var(--margin-bottom-small);
@@ -85,21 +95,15 @@ body {
 .mg-btm-lg {
     margin-bottom: var(--margin-bottom-large);
 }
-.section {
-    min-height: min-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.standard-l-h {
+    line-height: 1.3;
 }
+
 .light-weight{
     font-weight: var(--font-weight-light);
 }
 .italic {
     font-style: italic;
-}
-.large-text {
-    font-size: var(--font-large-text);
 }
 .tit-pad {
     padding: var(--title-padding);
@@ -128,7 +132,7 @@ body {
     visibility: visible;
   }
 
-  
+/*-----------------------------------NAV SECTION--------------------------------*/
 nav, footer, h1 {
   font-family:'Times New Roman', Times, serif;
 }
@@ -479,6 +483,19 @@ a:hover {
 
 .offers {
     background-color: var(--accent-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 750px) {
+    .offers h2 {
+        margin: 0 1rem;
+        line-height: 1.3;
+    }
+    .offers {
+        min-height: 25vh;
+    }
 }
 /*-------------------------ENVO BUBBLES SECTION---------------------------------*/
 
@@ -494,7 +511,6 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Times New Roman', Times, serif;
     transition: background-size 0.5s ease;
     filter: grayscale(80%);
     background-size: 100%; 
@@ -616,16 +632,26 @@ a:hover {
 .add-on {
     margin: var(--margin-bottom-large);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
 .add-on-text {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-around;
+    align-items: center;
     gap: 1rem;
+    width: 70%;
+}
+.add-on-item {
+    height: 100px;
+    width: 200px;
+}
+
+.add-icon {
+    height: 60px;
+    width: 60px;
 }
 @media screen and (max-width: 980px) {
     .pricing-cards{
@@ -672,6 +698,13 @@ a:hover {
 /*-------------------------------PROCESS--------------------------------*/
 .main-process-title {
     color: var(--accent-color);
+}
+#process-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 .process-container {
     display: flex;
@@ -746,13 +779,23 @@ a:hover {
 #contact-section {
     color: black;
     background-color: var(--light-color);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 5%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 .contact-box {
     display: flex;
     justify-content: space-around;
     text-align: left;
 }
+@media screen and (max-width:750px){
+    .map {
+    height: 200;
+    width: 300;
+    }
 
+}
 /*------------------FAQ SECTION--------------------*/
 
 .faq-title h2 {
@@ -761,7 +804,7 @@ a:hover {
   display: inline-block;
   font-weight: 600;
   line-height: 1;
-  font-family: var(--font-sans);
+  font-family: sans-serif;
 }
 
 .faq-title h2::before {
@@ -788,7 +831,7 @@ a:hover {
   background: var(--light-color);
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
   border-radius: 4px;
-  font-family: var(--font-sans);
+  font-family: sans-serif;
 }
 
 .faq .card {
@@ -956,4 +999,51 @@ align-items: center;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 300;
+}
+
+/*---------------------------TEST--------------------*/
+.services {
+    width: 100%; 
+    background-color: var(--dark-color);
+    display: grid; 
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service-image {
+    background: url(assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 25rem;
+}
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 200px;
+    align-items: flex-start;
+    width: auto;
+    padding-left: 10px;
+    padding-top: 10%;
+}
+.service-headline {
+    font-size: 2rem;
+}
+@media screen and (max-width: 1270px){
+    .service-image {
+        min-height: 35rem;
+    }
+}
+@media screen and (max-width: 780px){
+    .service-image {
+        min-height: 20rem;
+    }
+    .services {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .service-text {
+        padding: 3rem;
+    }
 }
