@@ -98,7 +98,9 @@ body {
 .standard-l-h {
     line-height: 1.3;
 }
-
+.ltspacing {
+    letter-spacing: var(--letter-spacing-widest);
+}
 .light-weight{
     font-weight: var(--font-weight-light);
 }
@@ -181,9 +183,7 @@ header {
     color: var(--accent-color);
  }
 
- nav .home-link {
-    margin-right: auto;
- }
+
 
  nav svg{
     fill: var(--accent-color);
@@ -218,7 +218,7 @@ header {
         right:-100%; /*Instead of display:none; we position it 100% to the right so we can use an animation property. This MUST be paired with the checked ~ so the menu will return to right: 0 when checked*/ 
         z-index: 10;
         width: 150px;
-        background-color: var(--accent-color);
+        background-color: var(--light-color);
         transition: 0.75s ease-out;
         height: 100vh;
     }
@@ -233,6 +233,7 @@ header {
     .open-sidebar-button, .close-sidebar-button{
         display: block;
         padding: 20px;
+        margin-left: auto;
     }
     #sidebar-active:checked ~ .links-container{
         right: 0;
@@ -265,7 +266,7 @@ header {
     transform: translateX(-50%, -50%);
     height: 50px; /* Reduced for mobile space */
     width: auto;
-    left: 85%; /* Center it properly */
+    left: 5%; /* Center it properly */
     top: 15%;
 
 }
@@ -389,6 +390,51 @@ a:hover {
         width: 100%;
     }
     
+}/*---------------------------SERVICES--------------------*/
+.services {
+    width: 100%; 
+    background-color: var(--dark-color);
+    display: grid; 
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service-image {
+    background: url(assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 25rem;
+}
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 200px;
+    align-items: flex-start;
+    width: auto;
+    padding-left: 10px;
+    padding-top: 7%;
+}
+.service-headline {
+    font-size: 2rem;
+}
+@media screen and (max-width: 1270px){
+    .service-image {
+        min-height: 35rem;
+    }
+}
+@media screen and (max-width: 780px){
+    .service-image {
+        min-height: 20rem;
+    }
+    .services {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .service-text {
+        padding: 3rem;
+    }
 }
 /*-------------------------CTA SECTION---------------------------------*/
 .cta {
@@ -413,71 +459,6 @@ a:hover {
     text-align: left;
     list-style-type: none;
 }
-/*-------------------------PERFORMANCE GRID SECTION---------------------------------*/
-.performers {
-    text-align: center;
-}
-
-.performance-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 40px;
-}
-.perf-grid-box {
-    height: 400px;
-    width: 300px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-}
-.perf-grid-box p {
-    display: flex;
-    align-items: end;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-}
-.photo-one {
-    background-image: url("assets/photos/Women\ in\ black\ lingerie\ sitting\ on\ bed.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-}
-.photo-two {
-    background-image: url("assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-}
-.photo-three {
-    background-image: url("assets/photos/Women\ in\ black\ lingerie\ sitting\ on\ bed.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-}
-@media screen and (max-width: 1110px) {
-    .perf-grid-box {
-        height: 300px;
-        width: 200px;
-    }
-}
-@media screen and (max-width: 780px) {
-    .perf-grid-box {
-        height: 250px;
-        width: 150px;
-    }
-}
-@media screen and (max-width: 590px) {
-    .performance-grid {
-        grid-template-columns: auto;
-    }
-       .perf-grid-box {
-        height: 300px;
-        width: 200px;
-    }
-}
 
 /*-------------------------OFFERS SECTION---------------------------------*/
 
@@ -498,15 +479,18 @@ a:hover {
     }
 }
 /*-------------------------ENVO BUBBLES SECTION---------------------------------*/
-
+.environments {
+    text-align: center;
+    padding: var(--section-padding);
+}
 .envo-bubbles {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    grid-template-rows: auto;
+    gap: 5px;
 }
 .envo-bubble {
-    height: 100px;
+    height: 250px;
     background-color: rgb(200, 165, 141);
     display: flex;
     justify-content: center;
@@ -642,7 +626,7 @@ a:hover {
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
-    width: 70%;
+    width: 100%;
 }
 .add-on-item {
     height: 100px;
@@ -782,20 +766,24 @@ a:hover {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 5%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.contact-box {
+.contact-container {
+    width: 90%; 
+    min-height: 250px;
+    max-width: var(--container-lg);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
     text-align: left;
-}
-@media screen and (max-width:750px){
-    .map {
-    height: 200;
-    width: 300;
-    }
+    gap: 30px;
+  }
 
-}
+  @media (max-width: 480px) {
+    .contact-container {
+        flex-direction: column;
+    }
+  }
 /*------------------FAQ SECTION--------------------*/
 
 .faq-title h2 {
@@ -958,7 +946,21 @@ a:hover {
   left: 0;
   pointer-events: none; 
 }
-
+.overlay-text-desktop {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+.overlay-text-mobile {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    display: none;
+}
 @media (max-width: 580px) {
     .tease-title {
         left: 50%;
@@ -966,6 +968,16 @@ a:hover {
         transform: translateX(-50%);
         width: 90%; /* Keeps it from hitting the edges */
         font-size: 24px;
+    }
+    .overlay-text-mobile {
+        left: 35%;
+}
+@media (max-width:480px) {
+    .overlay-text-mobile {
+        display:block;
+    }
+    .overlay-text-desktop {
+        display: none;
     }
 }
 /*------------------------------------FOOTER SECTION-------------------------------*/
@@ -999,51 +1011,4 @@ align-items: center;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 300;
-}
-
-/*---------------------------TEST--------------------*/
-.services {
-    width: 100%; 
-    background-color: var(--dark-color);
-    display: grid; 
-    gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.service-image {
-    background: url(assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg);
-    background-size: cover;
-    background-position: center;
-    min-height: 25rem;
-}
-
-.service-text {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-height: 200px;
-    align-items: flex-start;
-    width: auto;
-    padding-left: 10px;
-    padding-top: 10%;
-}
-.service-headline {
-    font-size: 2rem;
-}
-@media screen and (max-width: 1270px){
-    .service-image {
-        min-height: 35rem;
-    }
-}
-@media screen and (max-width: 780px){
-    .service-image {
-        min-height: 20rem;
-    }
-    .services {
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-    }
-    .service-text {
-        padding: 3rem;
-    }
 }
