@@ -539,7 +539,9 @@ a:hover {
     .envo-bubbles {
         grid-template-columns: 1fr 1fr;
     }
-    
+    .envo-bubble {
+        height: 150px;
+    }
 }
 /*-------------------------PRICING SECTION---------------------------------*/
 .pricing {
@@ -775,10 +777,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     margin-inline: auto;
-    text-align: left;
     gap: 30px;
   }
-
+.contact-box {
+    line-height: .8;
+}
   @media (max-width: 480px) {
     .contact-container {
         flex-direction: column;
@@ -971,7 +974,7 @@ a:hover {
     }
     .overlay-text-mobile {
         left: 35%;
-}
+}}
 @media (max-width:480px) {
     .overlay-text-mobile {
         display:block;
