@@ -778,15 +778,9 @@ a:hover {
     align-items: center;
     margin-inline: auto;
     gap: 30px;
+    font-family: var(--font-serif);
   }
-.contact-box {
-    line-height: .8;
-}
-  @media (max-width: 480px) {
-    .contact-container {
-        flex-direction: column;
-    }
-  }
+
 /*------------------FAQ SECTION--------------------*/
 
 .faq-title h2 {
