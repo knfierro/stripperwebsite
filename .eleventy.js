@@ -5,6 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("index.js");
+  eleventyConfig.addPassthroughCopy("admin");
 
   return {
     dir: {
