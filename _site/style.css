@@ -399,13 +399,24 @@ a:hover {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.service-image {
-    background: url(assets/photos/Stripper\ in\ black\ lingerie\ laying\ down.jpg);
+.first-image {
+    background: url(assets/photos/zoey.jpg);
     background-size: cover;
     background-position: center;
     min-height: 25rem;
 }
-
+.second-image {
+    background: url(assets/photos/butt.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 25rem;
+}
+.third-image {
+    background: url(assets/photos/girls.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 25rem;
+}
 .service-text {
     display: flex;
     flex-direction: column;
