@@ -1,5 +1,73 @@
 {
   "heroTitle": "Scottsdale's Stripper Source",
   "phoneNumber": "(480) 468-9801",
-  "testMessage": "This is a test value"
+  "email" : "scottsdalestrippersource@gmail.com",
+  "locationName": "Scottsdale's",
+  "heroHeadline": "STRIPPER SOURCE",
+  "heroSubtitle": "Hire <strong>Professional Strippers</strong> for Your Next Bachelor Party or Adult Event",
+  "serviceArea": "<em>Serving Scottsdale and the Greater Phoenix Area</em>",
+  "buttonCTA": "Book Your Event Now",
+  "introTitle": "Welcome to Scottsdale Stripper Source — <br> <span class=\"light-weight\">selectively curated dancers who embody the <span class=\"italic\">energy, beauty and standards</span> Scottsdale is notorious for.</span>",
+  "featureTitleOne":"Energy",
+  "featureOneDescription": "Experts at building the tension & creating a fun, high-energy atmosphere",
+  "featureTitleTwo":"Beauty" ,
+  "featureTwoDescription": "Selected based on appearance, personality and performance skills",
+  "featureTitleThree": "Standards",
+  "featureThreeDescription": "Professionals at directing a private, controlled and upscale experience",
+  "centerQuote": "This is more than one night of entertainment, this is a fully fledged fantasy experience that your friends will talk about for years",
+  
+  "experienceTitle": "Choose your experience", 
+  "bubbleOne" : "Private Sessions",
+  "bubbleTwo" : "Bachelor / Bachelorette Parties",
+  "bubbleThree" : "Golf Parties",
+  "bubbleFour" : "VIP Events",
+  "bubbleFive" : "Pool Parties",
+  "bubbleSix" : "Military Send-Offs",
+
+  "packageOneTitle": "Average<br>Package",
+  "packageOnePricing": "<span class=\"small-text\">One Hour at</span><br><span>$2,000</span>",
+  "packageOneFeature1": "Two Professional Dancers", 
+  "packageOneFeature2": "Unlimited Lap Dances", 
+  "packageOneFeature3": "Topless Performances", 
+
+  "packageTwoTitle": "\"Really Big\"<br> Package",
+  "packageTwoPricing": "<span class=\"small-text\">Two Hours at</span><br><span>$2,500</span>",
+  "packageTwoFeature1": "\"Average\" Package Plus:", 
+  "packageTwoFeature2": "Pole Performances <span class=\"small-text\">Pole Included***</span>", 
+
+  "packageThreeTitle": "\"Oh My God\"<br> Package",
+  "packageThreePricing": "<span class=\"small-text\">Starting at</span><br><span>$3,000</span>",
+  "packageThreeFeature1": "\"Really Big\" Package Plus:",
+  "packageThreeFeature2": "Party Games",
+  "packageThreeFeature3": "Four Full Hours",
+
+  "faqTitle": "FAQ",
+"faqOneQuestion": "Can I add more time once the night has started?",
+"faqOneAnswer": "Yes, unless the dancers are booked for another event that evening. If you are interested in adding on more time, just notify your dancer so she can check with her schedule. Payment can be negotiated with your dancer if she chooses to stay for another hour and has no other scheduling conflicts.",
+
+"faqTwoQuestion": "Do I need to tip?",
+"faqTwoAnswer": "Although not required, tips are expected and highly appreciated. Tips can be made in the form of cash, Apple Pay, Cash App and Venmo depending on the dancer and what platform she uses.",
+
+"faqThreeQuestion": "When is payment due?",
+"faqThreeAnswer": "We require 20% down in order to reserve. Payment will be made in full when the dancers arrive, before they begin the entertainment. We accept all major credit cards, cash, Apple Pay, Zelle and Venmo.",
+
+"faqFourQuestion": "Can I choose my dancer?",
+"faqFourAnswer": "Dancers are selected and scheduled based on availability. During the booking process you will receive photos of the girls we have available prior to confirmation.",
+
+"faqFiveQuestion": "What is provided with each package?",
+"faqFiveAnswer": "Booking details are dependent on your package of choice. We offer 3 packages to choose from and also accommodate custom requests. Let us know when booking your event.",
+
+"faqSixQuestion": "What is our cancellation policy?",
+"faqSixAnswer": "Cancellations must be given 24 hours in advance. If cancellation is made after the grace period, your refund will not be issued.",
+
+"faqSevenQuestion": "How far in advance should I book?",
+"faqSevenAnswer": "We accept same-day bookings if available, however it is highly recommended to book your event far in advance as weekends, holidays and city events fill up quickly.",
+
+
+ "lightColor" : "#eee2d1",
+ "lightOpacity" : "rgba(232, 228, 215, 50%)",
+  "darkColor" : "#170d0d",
+ "accentColor" : "#4f2c18",
+  "textColor" : "rgb(232, 228, 215)",
+  "mutedColor" : "rgb(53, 38, 31)"
 } 

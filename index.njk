@@ -4,16 +4,25 @@ title: Premium Strippers in Scottsdale & Phoenix
 description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and Private Events
 ---
 
-
+<style>
+    :root { 
+ --light-color:{{ home.lightColor }};
+  --light-opacity: {{home.lightOpacity}};
+  --dark-color: {{home.darkColor}};
+  --accent-color:  {{home.accentColor}};
+  --text-color:   {{home.textColor}};
+  --muted-color:    {{home.mutedColor}};
+  }
+</style>
 
 <main>
 <section id="home" class="hero section">
 <div class="container hero-cont">
         <div class="hero-text">
-            <h1 class="hero-headline fade-up"><span class="location-text"> {{ home.locationName}} </span><br> {{ hero.heroHeadline}} </h1>
-            <p class="hero-subheadline fade-up"> {{ home.heroSubtitle }} </p>
-            <p class="fade-up hero-location"><em>Serving Scottsdale and the Greater Phoenix Area</em></p>
-            <a href="tel:+14804689801"><button class="hero-b buttons color-change fade-up hero-buttons">Book Your Event Now</button></a>
+            <h1 class="hero-headline fade-up"><span class="location-text"> {{ home.locationName}} </span><br> {{ home.heroHeadline}} </h1>
+            <p class="hero-subheadline fade-up"> {{ home.heroSubtitle | safe }} </p>
+            <p class="fade-up hero-location">{{ home.serviceArea | safe }}</p>
+            <a href="tel:+14804689801"><button class="hero-b buttons color-change fade-up hero-buttons"> {{ home.buttonCTA }}</button></a>
         
         </div>
 </div>
@@ -27,8 +36,7 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
             <p class="fade-up location-text cta-title opacity">No Disappointments</p>
             <p class=" fade-up location-text cta-title">Just Premium Experiences</p>
             <p class="fade-up cta-text">
-                
-                <h2 class="fade-up mg-btm-lg lg-text standard-l-h">Welcome to Scottsdale Stripper Source — <br> <span class="light-weight">selectively curated dancers who embody the <span class="italic">energy, beauty and standards</span> Scottsdale is notorious for.</span></h2>
+                <h2 class="fade-up mg-btm-lg lg-text standard-l-h"> {{ home.introTitle | safe }} </h2>
          </div>
     </section>
 
@@ -38,8 +46,8 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
         <div class="service-box">
             <div class="service-image first-image"></div>
                 <div class="service-text">
-                    <h3 class="service-headline location-text">Energy</h3>
-                    <p>Experts at building the tension & creating a fun, high-energy atmosphere</p>
+                    <h3 class="service-headline location-text"> {{home.featureTitleOne }} </h3>
+                    <p>{{ home.featureOneDescription}} </p>
 
                 </div>
         </div>
@@ -47,8 +55,8 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
         <div class="service-box">
             <div class="service-image second-image"></div>
             <div class="service-text">
-                <h3 class="service-headline location-text">Beauty</h3>
-                <p>Selected based on appearance, personality and performance skills</p>
+                <h3 class="service-headline location-text">{{home.featureTitleTwo }}</h3>
+                <p>{{ home.featureTwoDescription}}</p>
             
             </div>
         </div>
@@ -56,8 +64,8 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
         <div class="service-box">
             <div class="service-image third-image"></div>
             <div class="service-text">
-                <h3 class="service-headline location-text">Standards</h3>
-                <p>Pros at directing a private, controlled and upscale experience</p>
+                <h3 class="service-headline location-text">{{home.featureTitleThree }}</h3>
+                <p>{{home.featureThreeDescription}}</p>
             </div>
         </div>
     </section>
@@ -65,7 +73,7 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
 
 <section class="section offers">
     <div class="container">
-<h2 class="mg-btm-md lg-text">This is more than one night of entertainment, this is a fully fledged fantasy experience that your friends will talk about for years</h2>
+<h2 class="mg-btm-md lg-text">{{home.centerQuote }}</h2>
 
 </div>
 </section>
@@ -73,15 +81,15 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
 <!-------------ENVIRONMENTS SECTION------------------------>
 
 <section class="environments"> 
-    <h2 class="location-text mg-btm-lg">choose your experience</h2>
+    <h2 class="location-text mg-btm-lg">{{home.experienceTitle}}</h2>
 
    <div class="envo-bubbles">
-<div class="envo-bubble is-active private"><h3>Private Sessions</h3></div>
-<div class="envo-bubble is-active bachelor"><h3>Bachelor / Bachelorette Parties</h3></div>
-<div class="envo-bubble is-active golf"><h3>Golf Parties</h3></div>
-<div class="envo-bubble is-active vip"><h3>VIP Events</h3></div>
-<div class="envo-bubble is-active pool"><h3>Pool Parties</h3></div>
-<div class="envo-bubble is-active military"><h3>Military Send-Offs</h3></div>
+<div class="envo-bubble is-active private"><h3> {{home.bubbleOne }}</h3></div>
+<div class="envo-bubble is-active bachelor"><h3> {{home.bubbleTwo }}</h3></div>
+<div class="envo-bubble is-active golf"><h3>{{home.bubbleThree }}</h3></div>
+<div class="envo-bubble is-active vip"><h3>{{home.bubbleFour }}</h3></div>
+<div class="envo-bubble is-active pool"><h3>{{home.bubbleFive }}</h3></div>
+<div class="envo-bubble is-active military"><h3>{{home.bubbleSix}}</h3></div>
     </div>
 
     </div>
@@ -95,13 +103,13 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
 <div class="pricing-cards fade-up">
 <div class="pricing-card">
     <div>
-     <h3 class="location-text">"Average"<br>Package</h3><br>
-      <p class="pricing-description"><span class="small-text">One Hour at</span><br><span>$1,000</span></p>
+     <h3 class="location-text">{{home.packageOneTitle | safe}}</h3><br>
+      <p class="pricing-description">{{home.packageOnePricing | safe}}</p>
       </div>
       <ul class="pricing-list">
-           <li>Two Professional Dancers</li>
-            <li>Unlimited Lap Dances</li>
-            <li>Topless Performance</li>
+           <li>{{home.packageOneFeature1}}</li>
+            <li>{{home.packageOneFeature2}}</li>
+            <li>{{home.packageOneFeature3}}</li>
       </ul>
       <a href="tel:+14804689801"><button class="hero-buttons">Book Now</button></a>
 
@@ -109,12 +117,12 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
 </div>
 <div class="pricing-card">
     <div>
-     <h3 class="location-text">"Really Big"<br>Package</h3><br>
-      <p class="pricing-description"><span class="small-text">Two Hours at</span><br><span>$2,000</span></p>
+     <h3 class="location-text">{{home.packageTwoTitle | safe}}</h3><br>
+      <p class="pricing-description">{{home.packageTwoPricing | safe}}</p>
       </div>
       <ul class="pricing-list">
-        <li class="opacity">"Average" Package Plus:</li>
-        <li>Pole Performances <span class="small-text">Pole Included***</span></li>
+        <li class="opacity">{{home.packageTwoFeature1}}</li>
+        <li>{{home.packageTwoFeature2 | safe}}</li>
       </ul>
       <a href="tel:+14804689801"><button class="hero-buttons">Book Now</button></a>
 </div>
@@ -122,13 +130,13 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
 
 <div class="pricing-card">
     <div>
-     <h3 class="location-text">"Oh My God"<br>Package</h3><br>
-      <p class="pricing-description"><span class="small-text">Starting at</span><br><span>$3,000</span></p>
+     <h3 class="location-text">{{home.packageThreeTitle | safe}}</h3><br>
+      <p class="pricing-description">{{home.packageThreePricing | safe}}</p>
       </div>
       <ul class="pricing-list">
-         <li class="opacity">"Really Big" Package Plus:</li>
-         <li>Party Games</li>
-        <li>Four Full Hours</li>
+         <li class="opacity">{{home.packageThreeFeature1}}</li>
+         <li>{{home.packageThreeFeature2}}</li>
+        <li>{{home.packageThreeFeature3}}</li>
       </ul>
       <a href="tel:+14804689801"><button class="hero-buttons">Book Now</button></a>
 </div>
@@ -180,7 +188,7 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
         <div class="process-card">
             <img class="bouncy-icon" src="assets/icons/icons8-ringer-volume-24.png" alt="Phone Icon">
             <h3 class="process-title location-text">Contact</h3>
-            <p class="process-subtitle">Call (480)468-9801</p>
+            <p class="process-subtitle">Call {{home.phoneNumber}}</p>
             <p class="process-description">Call or Text us for more information regarding scheduling, availability and event details. We also accomodate custom requests.</p>
         </div>
       
@@ -201,7 +209,7 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
         </div>
 
 
-        <a href="canva.com"><button class="hero-b buttons hero-buttons color-change fade-up">Book Your Event Now</button></a>
+        <a href="canva.com"><button class="hero-b buttons hero-buttons color-change fade-up">{{home.buttonCTA}}</button></a>
 
 
     </div>
@@ -227,11 +235,9 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
     <div class="contact-container">
         <div class="contact-box">            
             <p>Email Us 24/7 at:</p>
-            <p>scottsdalestrippersource@gmail.com</p>
+            <p>{{home.email}}</p>
             <p>{{home.phoneNumber}}
         </div>
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-4aed28a4-567f-49bc-956f-67376d82c482" data-elfsight-app-lazy></div>
 </div>
 </section>
 <!-------------FAQ SECTION------------------------>
@@ -245,125 +251,6 @@ description: Premium Strippers in Scottsdale & Phoenix for Bachelor Parties and 
                     </div>
                     <div class="grid-test col-md-10 offset-md-1">
                         <div class="faq" id="accordion">
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-1">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
-                                            <span class="badge">1</span>Can I add more time once the night has started?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Yes, unless the dancers are booked for another event that evening. If you are interested in adding on more time, just notify your dancer so she can check with her schedule. Payment can be negotiaited with your dancer if she chooses to stay for another hour and has no other scheduling conflicts.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-2">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
-                                            <span class="badge">2</span> Do I need to tip?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Although not required, tips are expected and highly appreciated. Tips can be made in the form of cash, Apple pay, Cash app and Venmo depending on the dancer and what platform she uses.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-3">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
-                                            <span class="badge">3</span>When is payment due?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>We require 20% down in order to reserve. Payment will be made in full when the dancers arrive, before they begin the entertainment.<br>
-                                        We accept all major credit cards, cash, Apple Pay, Zelle and Venmo.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-4">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
-                                            <span class="badge">4</span> Can I choose my dancer?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Dancers are selected and scheduled based on availability. During the booking process you will receive photos of the girls we have available prior to confirmation. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-5">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5">
-                                            <span class="badge">5</span> What is provided with each package? 
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Booking details are dependent on your package of choice. We offer 3 packages to choose from: <br>
-                                        <strong>"Average" Package Includes:</strong><br>
-                                            - Two Professional Dancers<br>
-                                            -Unlimited Lap Dances for 1 Hour<br>
-                                            -Topless Performance<br>
-                                           <strong>"Really Big" Package Includes:</strong> <br>
-                                            Everything listed above plus... <br>
-                                            Pole Performance (We provide pole, set up and breakdown)<br>
-                                            2 Hours<br>
-                                            <strong>"Oh My God" Package Includes:</strong> <br>
-                                            Everything listed above plus... <br>
-                                            3 Hours<br>
-                                            
-                                            We also accomdate custom requests, let us know when booking your event!
-                                    
-                                    </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-6">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6">
-                                            <span class="badge">6</span> What is our cancellation policy?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Cancellations must be given 24 hours in advance. If cancellation is made after the grace period, your refund will not be issued.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-7">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-7" data-aria-expanded="false" data-aria-controls="faqCollapse-7">
-                                            <span class="badge">7</span> How far in advance should I book? 
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-7" class="collapse" aria-labelledby="faqHeading-7" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>We accept same-day bookings if available, however it is highly recommended to book your event far in advance as weekends, holidays and city events fill up quickly.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                </div>  
+  <div class="card"> <div class="card-header" id="faqHeading-1"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1"> <span class="badge">1</span>{{ home.faqOneQuestion }} </h5> </div> </div> <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqOneAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-2"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2"> <span class="badge">2</span>{{ home.faqTwoQuestion }} </h5> </div> </div> <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqTwoAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-3"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3"> <span class="badge">3</span>{{ home.faqThreeQuestion }} </h5> </div> </div> <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqThreeAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-4"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4"> <span class="badge">4</span>{{ home.faqFourQuestion }} </h5> </div> </div> <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqFourAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-5"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5"> <span class="badge">5</span>{{ home.faqFiveQuestion }} </h5> </div> </div> <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqFiveAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-6"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6"> <span class="badge">6</span>{{ home.faqSixQuestion }} </h5> </div> </div> <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqSixAnswer }}</p> </div> </div> </div> <div class="card"> <div class="card-header" id="faqHeading-7"> <div class="mb-0"> <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-7" data-aria-expanded="false" data-aria-controls="faqCollapse-7"> <span class="badge">7</span>{{ home.faqSevenQuestion }} </h5> </div> </div> <div id="faqCollapse-7" class="collapse" aria-labelledby="faqHeading-7" data-parent="#accordion"> <div class="card-body"> <p>{{ home.faqSevenAnswer }}</p> </div> </div> </div> </div>
     </section>
  </main>
