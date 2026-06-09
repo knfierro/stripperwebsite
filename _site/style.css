@@ -400,19 +400,19 @@ a:hover {
 }
 
 .first-image {
-    background: url(assets/photos/zoey.jpg);
+    background: url('assets/photos/zoey.jpg');
     background-size: cover;
     background-position: center;
     min-height: 25rem;
 }
 .second-image {
-    background: url(assets/photos/butt.jpg);
+    background: url('assets/photos/butt.jpg');
     background-size: cover;
     background-position: center;
     min-height: 25rem;
 }
 .third-image {
-    background: url(assets/photos/girls.jpg);
+    background: url('assets/photos/girls.jpg');
     background-size: cover;
     background-position: center;
     min-height: 25rem;
