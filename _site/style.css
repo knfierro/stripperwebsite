@@ -412,7 +412,7 @@ a:hover {
     min-height: 25rem;
 }
 .third-image {
-    background: url('assets/photos/girls.jpg');
+    background: url('/assets/photos/girls.jpg');
     background-size: cover;
     background-position: center;
     min-height: 25rem;
