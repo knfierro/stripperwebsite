@@ -13,105 +13,105 @@ collections:
         name: "homepage"
         file: "_data/home.json"
 
-fields:
+    fields:
 
-- { label: "Browser Title", name: "heroTitle", widget: "string" }
-- { label: "Phone Number for Links", name: "phoneNumber", widget: "string" }
-- { label: "Displayed Phone Number", name: "displayPhoneNumber", widget: "string" }
-- { label: "Email Address", name: "email", widget: "string" }
-- { label: "Location Name", name: "locationName", widget: "string" }
-- { label: "Hero Headline", name: "heroHeadline", widget: "string" }
-- { label: "Hero Subtitle Before Bold Text", name: "heroSubtitleBefore", widget: "string" }
-- { label: "Hero Subtitle Bold Text", name: "heroSubtitle", widget: "string" }
-- { label: "Hero Subtitle After Bold Text", name: "heroSubtitleAfter", widget: "string" }
-- { label: "Service Area", name: "serviceArea", widget: "string" }
-- { label: "Button CTA", name: "buttonCTA", widget: "string" }
-- { label: "CTA Top Line", name: "ctaTopLine", widget: "string" }
-- { label: "CTA Main Line", name: "ctaMainLine", widget: "string" }
-- { label: "Intro Title", name: "introTitle", widget: "string" }
-- { label: "Intro Text", name: "introText", widget: "string" }
-- { label: "Intro Emphasis", name: "introEmphasis", widget: "string" }
-- { label: "Intro Ending", name: "introEnding", widget: "string" }
-- { label: "Feature Title One", name: "featureTitleOne", widget: "string" }
-- { label: "Feature Description One", name: "featureOneDescription", widget: "text" }
-- { label: "Feature Title Two", name: "featureTitleTwo", widget: "string" }
-- { label: "Feature Description Two", name: "featureTwoDescription", widget: "text" }
-- { label: "Feature Title Three", name: "featureTitleThree", widget: "string" }
-- { label: "Feature Description Three", name: "featureThreeDescription", widget: "text" }
-- { label: "Center Quote", name: "centerQuote", widget: "text" }
-- { label: "Experience Title", name: "experienceTitle", widget: "string" }
-- { label: "Bubble One", name: "bubbleOne", widget: "string" }
-- { label: "Bubble Two", name: "bubbleTwo", widget: "string" }
-- { label: "Bubble Three", name: "bubbleThree", widget: "string" }
-- { label: "Bubble Four", name: "bubbleFour", widget: "string" }
-- { label: "Bubble Five", name: "bubbleFive", widget: "string" }
-- { label: "Bubble Six", name: "bubbleSix", widget: "string" }
-- { label: "Pricing Title", name: "pricingTitle", widget: "string" }
-- { label: "Pricing Subtitle", name: "pricingSubtitle", widget: "text" }
-- { label: "Package One Title", name: "packageOneTitle", widget: "string" }
-- { label: "Package One Title Second Line", name: "packageOneTitleSecondLine", widget: "string" }
-- { label: "Package One Pricing Text", name: "packageOnePricing", widget: "string" }
-- { label: "Package One Price", name: "packageOnePrice", widget: "string" }
-- { label: "Package One Feature 1", name: "packageOneFeature1", widget: "string" }
-- { label: "Package One Feature 2", name: "packageOneFeature2", widget: "string" }
-- { label: "Package One Feature 3", name: "packageOneFeature3", widget: "string" }
-- { label: "Package Two Title", name: "packageTwoTitle", widget: "string" }
-- { label: "Package Two Title Second Line", name: "packageTwoTitleSecondLine", widget: "string" }
-- { label: "Package Two Pricing Text", name: "packageTwoPricing", widget: "string" }
-- { label: "Package Two Price", name: "packageTwoPrice", widget: "string" }
-- { label: "Package Two Feature 1", name: "packageTwoFeature1", widget: "string" }
-- { label: "Package Two Feature 2", name: "packageTwoFeature2", widget: "string" }
-- { label: "Package Two Feature 2 Note", name: "packageTwoFeature2Note", widget: "string" }
-- { label: "Package Three Title", name: "packageThreeTitle", widget: "string" }
-- { label: "Package Three Title Second Line", name: "packageThreeTitleSecondLine", widget: "string" }
-- { label: "Package Three Pricing Text", name: "packageThreePricing", widget: "string" }
-- { label: "Package Three Price", name: "packageThreePrice", widget: "string" }
-- { label: "Package Three Feature 1", name: "packageThreeFeature1", widget: "string" }
-- { label: "Package Three Feature 2", name: "packageThreeFeature2", widget: "string" }
-- { label: "Package Three Feature 3", name: "packageThreeFeature3", widget: "string" }
-- { label: "Add-On Title", name: "addOnTitle", widget: "string" }
-- { label: "Add-On One", name: "addOnOne", widget: "string" }
-- { label: "Add-On Two", name: "addOnTwo", widget: "string" }
-- { label: "Add-On Three", name: "addOnThree", widget: "string" }
-- { label: "Extra Time Text", name: "extraTimeText", widget: "text" }
-- { label: "Party Rules Title", name: "partyRulesTitle", widget: "string" }
-- { label: "Party Rules Subtitle", name: "partyRulesSubtitle", widget: "text" }
-- { label: "Party Rule One", name: "partyRuleOne", widget: "text" }
-- { label: "Party Rule Two", name: "partyRuleTwo", widget: "text" }
-- { label: "Party Rule Three", name: "partyRuleThree", widget: "text" }
-- { label: "Party Rule Four", name: "partyRuleFour", widget: "text" }
-- { label: "Process Title One", name: "processTitleOne", widget: "string" }
-- { label: "Process Subtitle One", name: "processSubtitleOne", widget: "string" }
-- { label: "Process Description One", name: "processDescriptionOne", widget: "text" }
-- { label: "Process Title Two", name: "processTitleTwo", widget: "string" }
-- { label: "Process Subtitle Two", name: "processSubtitleTwo", widget: "string" }
-- { label: "Process Description Two", name: "processDescriptionTwo", widget: "text" }
-- { label: "Process Title Three", name: "processTitleThree", widget: "string" }
-- { label: "Process Subtitle Three", name: "processSubtitleThree", widget: "string" }
-- { label: "Process Description Three", name: "processDescriptionThree", widget: "text" }
-- { label: "Desktop Tease Text", name: "teaseDesktopText", widget: "string" }
-- { label: "Mobile Tease Text", name: "teaseMobileText", widget: "string" }
-- { label: "Final CTA Line One", name: "finalCtaLineOne", widget: "string" }
-- { label: "Final CTA Line Two", name: "finalCtaLineTwo", widget: "string" }
-- { label: "Contact Intro", name: "contactIntro", widget: "string" }
-- { label: "FAQ Title", name: "faqTitle", widget: "string" }
-- { label: "FAQ 1 Question", name: "faqOneQuestion", widget: "string" }
-- { label: "FAQ 1 Answer", name: "faqOneAnswer", widget: "text" }
-- { label: "FAQ 2 Question", name: "faqTwoQuestion", widget: "string" }
-- { label: "FAQ 2 Answer", name: "faqTwoAnswer", widget: "text" }
-- { label: "FAQ 3 Question", name: "faqThreeQuestion", widget: "string" }
-- { label: "FAQ 3 Answer", name: "faqThreeAnswer", widget: "text" }
-- { label: "FAQ 4 Question", name: "faqFourQuestion", widget: "string" }
-- { label: "FAQ 4 Answer", name: "faqFourAnswer", widget: "text" }
-- { label: "FAQ 5 Question", name: "faqFiveQuestion", widget: "string" }
-- { label: "FAQ 5 Answer", name: "faqFiveAnswer", widget: "text" }
-- { label: "FAQ 6 Question", name: "faqSixQuestion", widget: "string" }
-- { label: "FAQ 6 Answer", name: "faqSixAnswer", widget: "text" }
-- { label: "FAQ 7 Question", name: "faqSevenQuestion", widget: "string" }
-- { label: "FAQ 7 Answer", name: "faqSevenAnswer", widget: "text" }
-- { label: "Light Color", name: "lightColor", widget: "color" }
-- { label: "Light Opacity (0-1)", name: "lightOpacity", widget: "number", min: 0, max: 1, step: 0.1 }
-- { label: "Dark Color", name: "darkColor", widget: "color" }
-- { label: "Text Color", name: "textColor", widget: "color" }
-- { label: "Muted Color", name: "mutedColor", widget: "color" }
-- { label: "Accent Color", name: "accentColor", widget: "color" }
+    - { label: "Browser Title", name: "heroTitle", widget: "string" }
+    - { label: "Phone Number for Links", name: "phoneNumber", widget: "string" }
+    - { label: "Displayed Phone Number", name: "displayPhoneNumber", widget: "string" }
+    - { label: "Email Address", name: "email", widget: "string" }
+    - { label: "Location Name", name: "locationName", widget: "string" }
+    - { label: "Hero Headline", name: "heroHeadline", widget: "string" }
+    - { label: "Hero Subtitle Before Bold Text", name: "heroSubtitleBefore", widget: "string" }
+    - { label: "Hero Subtitle Bold Text", name: "heroSubtitle", widget: "string" }
+    - { label: "Hero Subtitle After Bold Text", name: "heroSubtitleAfter", widget: "string" }
+    - { label: "Service Area", name: "serviceArea", widget: "string" }
+    - { label: "Button CTA", name: "buttonCTA", widget: "string" }
+    - { label: "CTA Top Line", name: "ctaTopLine", widget: "string" }
+    - { label: "CTA Main Line", name: "ctaMainLine", widget: "string" }
+    - { label: "Intro Title", name: "introTitle", widget: "string" }
+    - { label: "Intro Text", name: "introText", widget: "string" }
+    - { label: "Intro Emphasis", name: "introEmphasis", widget: "string" }
+    - { label: "Intro Ending", name: "introEnding", widget: "string" }
+    - { label: "Feature Title One", name: "featureTitleOne", widget: "string" }
+    - { label: "Feature Description One", name: "featureOneDescription", widget: "text" }
+    - { label: "Feature Title Two", name: "featureTitleTwo", widget: "string" }
+    - { label: "Feature Description Two", name: "featureTwoDescription", widget: "text" }
+    - { label: "Feature Title Three", name: "featureTitleThree", widget: "string" }
+    - { label: "Feature Description Three", name: "featureThreeDescription", widget: "text" }
+    - { label: "Center Quote", name: "centerQuote", widget: "text" }
+    - { label: "Experience Title", name: "experienceTitle", widget: "string" }
+    - { label: "Bubble One", name: "bubbleOne", widget: "string" }
+    - { label: "Bubble Two", name: "bubbleTwo", widget: "string" }
+    - { label: "Bubble Three", name: "bubbleThree", widget: "string" }
+    - { label: "Bubble Four", name: "bubbleFour", widget: "string" }
+    - { label: "Bubble Five", name: "bubbleFive", widget: "string" }
+    - { label: "Bubble Six", name: "bubbleSix", widget: "string" }
+    - { label: "Pricing Title", name: "pricingTitle", widget: "string" }
+    - { label: "Pricing Subtitle", name: "pricingSubtitle", widget: "text" }
+    - { label: "Package One Title", name: "packageOneTitle", widget: "string" }
+    - { label: "Package One Title Second Line", name: "packageOneTitleSecondLine", widget: "string" }
+    - { label: "Package One Pricing Text", name: "packageOnePricing", widget: "string" }
+    - { label: "Package One Price", name: "packageOnePrice", widget: "string" }
+    - { label: "Package One Feature 1", name: "packageOneFeature1", widget: "string" }
+    - { label: "Package One Feature 2", name: "packageOneFeature2", widget: "string" }
+    - { label: "Package One Feature 3", name: "packageOneFeature3", widget: "string" }
+    - { label: "Package Two Title", name: "packageTwoTitle", widget: "string" }
+    - { label: "Package Two Title Second Line", name: "packageTwoTitleSecondLine", widget: "string" }
+    - { label: "Package Two Pricing Text", name: "packageTwoPricing", widget: "string" }
+    - { label: "Package Two Price", name: "packageTwoPrice", widget: "string" }
+    - { label: "Package Two Feature 1", name: "packageTwoFeature1", widget: "string" }
+    - { label: "Package Two Feature 2", name: "packageTwoFeature2", widget: "string" }
+    - { label: "Package Two Feature 2 Note", name: "packageTwoFeature2Note", widget: "string" }
+    - { label: "Package Three Title", name: "packageThreeTitle", widget: "string" }
+    - { label: "Package Three Title Second Line", name: "packageThreeTitleSecondLine", widget: "string" }
+    - { label: "Package Three Pricing Text", name: "packageThreePricing", widget: "string" }
+    - { label: "Package Three Price", name: "packageThreePrice", widget: "string" }
+    - { label: "Package Three Feature 1", name: "packageThreeFeature1", widget: "string" }
+    - { label: "Package Three Feature 2", name: "packageThreeFeature2", widget: "string" }
+    - { label: "Package Three Feature 3", name: "packageThreeFeature3", widget: "string" }
+    - { label: "Add-On Title", name: "addOnTitle", widget: "string" }
+    - { label: "Add-On One", name: "addOnOne", widget: "string" }
+    - { label: "Add-On Two", name: "addOnTwo", widget: "string" }
+    - { label: "Add-On Three", name: "addOnThree", widget: "string" }
+    - { label: "Extra Time Text", name: "extraTimeText", widget: "text" }
+    - { label: "Party Rules Title", name: "partyRulesTitle", widget: "string" }
+    - { label: "Party Rules Subtitle", name: "partyRulesSubtitle", widget: "text" }
+    - { label: "Party Rule One", name: "partyRuleOne", widget: "text" }
+    - { label: "Party Rule Two", name: "partyRuleTwo", widget: "text" }
+    - { label: "Party Rule Three", name: "partyRuleThree", widget: "text" }
+    - { label: "Party Rule Four", name: "partyRuleFour", widget: "text" }
+    - { label: "Process Title One", name: "processTitleOne", widget: "string" }
+    - { label: "Process Subtitle One", name: "processSubtitleOne", widget: "string" }
+    - { label: "Process Description One", name: "processDescriptionOne", widget: "text" }
+    - { label: "Process Title Two", name: "processTitleTwo", widget: "string" }
+    - { label: "Process Subtitle Two", name: "processSubtitleTwo", widget: "string" }
+    - { label: "Process Description Two", name: "processDescriptionTwo", widget: "text" }
+    - { label: "Process Title Three", name: "processTitleThree", widget: "string" }
+    - { label: "Process Subtitle Three", name: "processSubtitleThree", widget: "string" }
+    - { label: "Process Description Three", name: "processDescriptionThree", widget: "text" }
+    - { label: "Desktop Tease Text", name: "teaseDesktopText", widget: "string" }
+    - { label: "Mobile Tease Text", name: "teaseMobileText", widget: "string" }
+    - { label: "Final CTA Line One", name: "finalCtaLineOne", widget: "string" }
+    - { label: "Final CTA Line Two", name: "finalCtaLineTwo", widget: "string" }
+    - { label: "Contact Intro", name: "contactIntro", widget: "string" }
+    - { label: "FAQ Title", name: "faqTitle", widget: "string" }
+    - { label: "FAQ 1 Question", name: "faqOneQuestion", widget: "string" }
+    - { label: "FAQ 1 Answer", name: "faqOneAnswer", widget: "text" }
+    - { label: "FAQ 2 Question", name: "faqTwoQuestion", widget: "string" }
+    - { label: "FAQ 2 Answer", name: "faqTwoAnswer", widget: "text" }
+    - { label: "FAQ 3 Question", name: "faqThreeQuestion", widget: "string" }
+    - { label: "FAQ 3 Answer", name: "faqThreeAnswer", widget: "text" }
+    - { label: "FAQ 4 Question", name: "faqFourQuestion", widget: "string" }
+    - { label: "FAQ 4 Answer", name: "faqFourAnswer", widget: "text" }
+    - { label: "FAQ 5 Question", name: "faqFiveQuestion", widget: "string" }
+    - { label: "FAQ 5 Answer", name: "faqFiveAnswer", widget: "text" }
+    - { label: "FAQ 6 Question", name: "faqSixQuestion", widget: "string" }
+    - { label: "FAQ 6 Answer", name: "faqSixAnswer", widget: "text" }
+    - { label: "FAQ 7 Question", name: "faqSevenQuestion", widget: "string" }
+    - { label: "FAQ 7 Answer", name: "faqSevenAnswer", widget: "text" }
+    - { label: "Light Color", name: "lightColor", widget: "color" }
+    - { label: "Light Opacity (0-1)", name: "lightOpacity", widget: "number", min: 0, max: 1, step: 0.1 }
+    - { label: "Dark Color", name: "darkColor", widget: "color" }
+    - { label: "Text Color", name: "textColor", widget: "color" }
+    - { label: "Muted Color", name: "mutedColor", widget: "color" }
+    - { label: "Accent Color", name: "accentColor", widget: "color" }
